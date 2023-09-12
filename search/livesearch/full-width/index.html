@@ -1,7 +1,7 @@
 {% assign currency = "kr" %}
 <div class="clerk-live-search-wrapper">
     <div class="clerk-product">
-        <div>
+        <div class="clerk-product-image-wrapper">
             <div class="clerk-product-badges">
                 {% if item.categories == 604 %}
                     <span class="clerk-waterproof">WATERPROOF</span>
@@ -12,9 +12,9 @@
             </div>
             <img loading="lazy" src="{{ item.image }}" alt="{{ item.name }}" class="clerk-product-image"/>
         </div>
-        <div>
+        <div class="clerk-product-info-wrapper">
             <p class="clerk-product-name">{{ item.name }}</p>
-            <div>
+            <div class="clerk-product-price-wrapper">
                 {% item.on_sale == true %}
                     <span class="clerk-product-price">{{ item.list_price | money_eu 2 }} {{ currency }}</span>
                 {% endif %}
@@ -22,7 +22,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="clerk-info-wrapper">
         {% if suggestions.length > 0 %}{% for item in suggestions %}
             <div class="clerk-suggestions"></div>
             {% endif %}{% endfor %}
