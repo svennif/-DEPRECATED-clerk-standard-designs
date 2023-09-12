@@ -1,0 +1,36 @@
+{% assign currency = "kr" %}
+<div class="clerk-live-search-wrapper">
+    <div class="clerk-product">
+        <div>
+            <div class="clerk-product-badges">
+                {% if item.categories == 604 %}
+                    <span class="clerk-waterproof">WATERPROOF</span>
+                {% endif %}
+                {% item.on_sale == true %}
+                    <span class="clerk-onsale">-{{ item.price | pct item.list_price }}%</span>
+                {% endif %}
+            </div>
+            <img loading="lazy" src="{{ item.image }}" alt="{{ item.name }}" class="clerk-product-image"/>
+        </div>
+        <div>
+            <p class="clerk-product-name">{{ item.name }}</p>
+            <div>
+                {% item.on_sale == true %}
+                    <span class="clerk-product-price">{{ item.list_price | money_eu 2 }} {{ currency }}</span>
+                {% endif %}
+                    <span class="clerk-product-onsale-price">{{ item.price | money_eu 2 }} {{ currency }}</span>
+            </div>
+        </div>
+    </div>
+    <div>
+        {% if suggestions.length > 0 %}{% for item in suggestions %}
+            <div class="clerk-suggestions"></div>
+            {% endif %}{% endfor %}
+            {% if categories.length > 0 %}{% for item in categories %}
+            <div class="clerk-categories"></div>
+            {% endif %}{% endfor %}
+            {% if pages.length > 0 %}{% for item in pages %}
+            <div class="clerk-pages"></div>
+        {% endif %}{% endfor %}
+    </div>    
+</div>
