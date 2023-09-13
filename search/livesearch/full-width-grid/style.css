@@ -1,0 +1,183 @@
+.clerk-instant-search-container {
+    right: 0 !important;
+}
+
+.clerk-col-1 {
+    flex: 1;
+}
+
+.clerk-col-2 {
+    flex: 2;
+}
+
+.clerk-instant-search {
+    overflow-y: scroll;
+    padding: 20px;
+    height: calc(100vh - 7em);
+    width: calc(100vw - 1em);
+    margin: 0.2em auto;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-top: 0px;
+    border-radius: 5px 5px 10px 10px;
+    box-shadow: 0 1em 2em 1em rgba(0, 0, 0, 0.2);
+}
+
+.clerk-instant-search-col {
+    margin: 0px 0px 20px 0px;
+}
+
+.clerk-instant-search-grid {
+    display: flex;
+}
+
+/******************************************************
+*
+*  Product
+*
+********************************************************/
+
+.clerk-instant-search-product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/******************************************************
+*
+*  End product
+*
+********************************************************/
+
+/******************************************************
+*
+*  Image
+*
+********************************************************/
+
+.clerk-instant-search-product-image {
+    display: inline-block;
+    width: 400px;
+    height: 480px;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/******************************************************
+*
+*  End image
+*
+********************************************************/
+/******************************************************
+*
+*  Info wrapper
+*
+********************************************************/
+
+.clerk-instant-search-product-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/******************************************************
+*
+*  End Info wrapper
+*
+********************************************************/
+/******************************************************
+*
+*  Product name
+*
+********************************************************/
+
+.clerk-instant-search-product-name {
+    font-family: Manrope;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2f314c;
+}
+
+.clerk-instant-search-product-name:hover {
+    color: #a3aea1;
+}
+
+/******************************************************
+*
+*  End product name
+*
+********************************************************/
+/******************************************************
+*
+*  Product price
+*
+********************************************************/
+
+.clerk-instant-search-product-list-price {
+    color: #666666;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+}
+
+.clerk-instant-search-product-price {
+    border-bottom: 2px solid #D3CDC3;
+    font-family: 'Manrope';
+    font-size: 16px;
+    color: #2f314c;
+    font-weight: 700;
+    line-height: 22px;
+    width: fit-content;
+}
+/******************************************************
+*
+*  End product price
+*
+********************************************************/
+/******************************************************
+*
+*  See More button
+*
+********************************************************/
+
+.clerk-view-more-results-button {
+    display: flex;
+    justify-content: center;
+    color: #6d6d6d;
+    text-decoration: underline;
+}
+
+.clerk-view-more-results-button:hover {
+    text-decoration: none;
+    color: #6d6d6d;
+}
+
+/******************************************************
+*
+*  Titles
+*
+********************************************************/
+
+.clerk-instant-search-title {
+    color: #000000;
+    margin: 10px 0;
+    padding-bottom: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: none;
+    border-bottom: 2px solid #F4F4F4;
+    width: calc(100% - 20px);
+}
+
+.clerk-instant-search-category > a {
+    color: #000;
+    margin: 1px 0;
+}
+
+.clerk-instant-search-category > a:hover {
+    text-decoration: underline;
+    color: #000;
+}
