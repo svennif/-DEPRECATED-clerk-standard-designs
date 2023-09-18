@@ -1,0 +1,102 @@
+<div class="clerk-facets">
+            <div class="clerk_absolute">
+        <div class="clerk_sort_wrapper">
+            <select class="clerk_sort_select" onchange="clerkSorting(this.options[ this.selectedIndex ].value, event);">
+                <option value="" disabled selected>Sorter efter:</option>
+                <option value="null_null">Bedst sælgende</option>
+                <option value="asc_name">Navn (A - Z)</option>
+                <option value="desc_name">Navn (Z - A)</option>
+                <option value="asc_price">Pris (lav til høj)</option>
+                <option value="desc_price">Pris (høj til lav)</option>
+                <option value="asc_age">Nyeste</option>
+                <option value="desc_age">Ældste</option>
+            </select>
+        </div>
+    </div>
+    {% assign fcount = facets.length %} {% assign index = 0 %} {% for facet_group in facets %}
+    <div class="clerk-facet-group clerk-facet-{{ facet_group.group }} tag">
+        <div class="clerk_facet_title" onclick="facet_toggle(this)">{{ facet_group.title }}</div>
+        <div class="facet_wrap">
+            {% if facet_group.type == "range" %}
+            <div class="clerk-range stagio_range" data-group="{{ facet_group.group}}" data-min="{{ facet_group.min }}" data-max="{{ facet_group.max }}" data-start="{{ facet_group.start }}" data-end="{{ facet_group.end }}" data-step="auto"></div>
+            {% endif %}
+
+            <div class="clerk-facet-group-facets {% if facet_group.facets.length > 10 %} pad-left {% endif %}">
+                {% for facet in facet_group.facets %}
+                <div class="clerk-facet {% if facet.selected %} clerk-facet-selected {% endif %}" data-facet="{{ facet_group.group }}" data-value="{{ facet.value }}" data-min="{{ facet.min }}" data-max="{{ facet.max }}">
+                    {%comment%}
+                    <div class="clerk-facet-count">{{ facet.count }}</div>
+                    {%endcomment%}
+                    <div class="clerk-facet-name">{{ facet.name }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {% assign index = index + 1 %} {% endfor %} {%comment%} {% if fcount > 3%}
+    <div class="clerk-facet-group fake_facet">
+        <div class="clerk_facet_title" onclick="facet_count_toggle(this)">See all filters ({{ fcount }})</div>
+    </div>
+    {%endif%} {%endcomment%}
+</div>
+
+<!--IMPORTANT: CHANGE THE toggle_ui_msg = {show: 'Se filtre', hide: 'Skjul filtre'}; to show other texts to show/hide filters-->
+
+<script>
+    if (window.innerWidth <= 767) {
+        (function () {
+            mark_facets = window.tagged > 0 ? true : false;
+            actual_facet = document.querySelectorAll(".actual_facet");
+            actual_facet.forEach((af) => {
+                if (mark_facets) {
+                    af.classList.toggle("tag");
+                }
+                let c = 0,
+                    x = 0,
+                    t = af.parentNode;
+                c = af.querySelectorAll(".clerk-facet-selected").length;
+                if (c != 0) {
+                    if (c > x) {
+                        x = c;
+                        t.prepend(af);
+                    }
+                    text_label = af.querySelector(".clerk_facet_title").textContent;
+                    selected_count = ` (${c})`;
+                    af.querySelector(".clerk_facet_title").textContent = text_label + selected_count;
+                }
+            });
+        })();
+
+        function facet_toggle() {
+            el = event.target;
+            if (el.closest(".clerk-facet-group").classList.contains("zindex")) {
+                el.closest(".clerk-facet-group").querySelector(".facet_wrap").style.display = "none";
+                el.closest(".clerk-facet-group").classList.remove("zindex");
+                el.classList.remove("zindex");
+            } else {
+                document.querySelectorAll(".clerk-facet-group").forEach((facet_group) => {
+                    facet_group.classList.remove("zindex");
+                });
+                document.querySelectorAll(".facet_wrap").forEach((facet_wrap) => {
+                    facet_wrap.style.display = "none";
+                });
+                el.closest(".clerk-facet-group").querySelector(".facet_wrap").style.display = "block";
+                el.closest(".clerk-facet-group").classList.add("zindex");
+                el.classList.add("zindex");
+            }
+        }
+
+        function facet_count_toggle() {
+            toggle_ui_msg = { show: "Se filtre", hide: "Skjul filtre" };
+            group_count = ` (${document.querySelectorAll(".clerk-facet-group").length})`;
+            el = event.target;
+            actual_facet = document.querySelectorAll(".actual_facet");
+            actual_facet.forEach((facet) => {
+                facet.classList.toggle("tag");
+            });
+            el.textContent = el.textContent.indexOf(toggle_ui_msg["show"]) > -1 ? toggle_ui_msg["hide"] + group_count : toggle_ui_msg["show"] + group_count;
+            window.tagged = window.tagged == undefined ? 1 : window.tagged * -1;
+        }
+    }
+</script>
