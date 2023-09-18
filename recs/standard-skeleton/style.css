@@ -1,0 +1,104 @@
+.clerk-wrapper {
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+
+.clerk-product-wrapper:hover {
+    text-decoration: none;
+}
+
+.clerk-headline-wrapper {
+    display: flex;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 0px 0px 0px 0px;
+    box-sizing: border-box;
+    border-radius: 0px;
+    padding: 0px 0px 0px 0px;
+    word-break: break-word;
+    text-decoration: none;
+}
+
+.clerk-headline {
+    font-size: 2em;
+}
+
+.clerk-slider {
+    overflow: visible;
+    white-space: nowrap;
+    position: relative;
+}
+
+/* 
+* This will determine  how many products are being shown in the slider
+*/
+.clerk-slider-content {
+    display: inline-block;
+    width: calc(25%);
+}
+@media screen and (max-width: 896px) {
+    .clerk-slider-content {
+        width: calc(50%);
+    }
+}
+@media screen and (max-width: 448px) {
+    .clerk-slider-content {
+        width: calc(100%);
+    }
+}
+
+/* This will change the styling of the nav buttons */
+
+.clerk-slider-nav {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-image: none !important;
+}
+
+.clerk-slider-nav-prev:after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border: solid rgba(0, 0, 0, 1);
+    border-width: 0 3px 3px 0;
+    transform: rotate(135deg);
+    margin-left: 3px;
+}
+
+.clerk-slider-nav-next:after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border: solid rgba(0, 0, 0, 1);
+    border-width: 0 3px 3px 0;
+    transform: rotate(-45deg);
+    margin-right: 7px;
+}
+
+.clerk-slider-nav-prev {
+    top: 50% !important;
+    left: 0 !important;
+    margin-top: -20px;
+}
+
+.clerk-slider-nav-next {
+    top: 50% !important;
+    right: 0 !important;
+    margin-top: -20px;
+}
