@@ -1,0 +1,78 @@
+<!-- 
+Useful for when a side-cart does not get re-rendered, but becomes in\visible.
+
+At the time of writing can be seen live at **“23.01.30 - Clerk.io STOY 2K21 2.0”  @** Stoy.com
+
+When implementing see what classes are being changed, as the script observes attribute changes for <targetNode>.
+Transitioning: call cart.js (shopify cart endpoint) and check if the products have changed since last time, If they have call Clerk() with the new products
+
+Open: make the slider visible with “opacity =1”
+Close: make the slider invisible with “opacity=0”
+
+Open/Close is done as the slider would flicker due to the re-render
+-->
+
+<!-- start Clerk.io E-commerce Personalisation tool - www.clerk.io -->
+<span class="clerk_m" style="position: absolute; transform: translate(-280px, 0px); min-height: 290px; opacity: 0" id="cart-others-also-bought" data-template="@cart-others-also-bought-2" data-products="[{% for line_item in cart.items %}{% if forloop.index0 > 0 %}, {% endif %}{{ line_item.product.id }}{% endfor %}]"></span>
+<style>
+    #cart-others-also-bought {
+        transition: opacity 0.5s ease-in-out;
+    }
+</style>
+<script>
+    // Select the node that will be observed for mutations
+    const targetNode = document.getElementById("CartDrawer");
+    // Options for the observer (which mutations to observe)
+    const config = { attributes: true };
+
+    let cartFetched = false;
+    let previousitemsID = [];
+    const clerk_element = document.getElementById("cart-others-also-bought");
+
+    // Function to fetch cart data
+    async function fetchCartData() {
+        const response = await fetch("/cart.js");
+        const data = await response.json();
+        let itemsID = [];
+        let cartItems = data.items;
+        for (var i = 0; i < cartItems.length; i++) {
+            itemsID.push(cartItems[i].product_id);
+        }
+        return itemsID;
+    }
+
+    // Callback function to execute when mutations are observed
+    const callback = async (mutationList, observer) => {
+        for (const mutation of mutationList) {
+            if (mutation.type === "attributes") {
+                if (targetNode.className == "drawer drawer--right is-transitioning drawer--is-open" && !cartFetched) {
+                    cartFetched = true;
+                    try {
+                        const itemsID = await fetchCartData();
+                        if (JSON.stringify(previousitemsID) != JSON.stringify(itemsID)) {
+                            await Clerk("content", ".clerk_m", "param", { products: itemsID });
+                            previousitemsID = itemsID;
+                        }
+                    } catch (error) {
+                        console.error(error);
+                    } finally {
+                        cartFetched = false;
+                    }
+                }
+                if (targetNode.className == "drawer drawer--right drawer--is-open") {
+                    clerk_element.style.opacity = 1;
+                }
+                if (targetNode.className == "drawer drawer--right") {
+                    clerk_element.style.opacity = 0;
+                }
+            }
+        }
+    };
+
+    // Create an observer instance linked to the callback function
+    const observer = new MutationObserver(callback);
+
+    // Start observing the target node for configured mutations
+    observer.observe(targetNode, config);
+</script>
+<!-- end Clerk.io E-commerce Personalisation tool - www.clerk.io -->
