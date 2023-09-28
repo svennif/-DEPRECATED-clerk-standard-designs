@@ -16,7 +16,7 @@
     .clerk-col-1 {
         flex: 2;
     }
-    
+
     .clerk-col-2 {
         flex: 1;
     }
@@ -26,7 +26,7 @@
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1200px){
+@media screen and (min-width: 768px) and (max-width: 1200px) {
     .clerk-instant-search-container {
         right: 0px !important;
         width: 100%;
@@ -56,7 +56,6 @@
     padding: 20px;
 }
 
-
 .clerk-instant-search-container a {
     text-decoration: none !important;
 }
@@ -67,12 +66,12 @@
     width: 100%;
     min-width: 650px;
     max-width: 1000px;
-    margin: .2em auto;
+    margin: 0.2em auto;
     background-color: white;
     border: 1px solid #eee;
     border-top: 0px;
     border-radius: 5px 5px 10px 10px;
-    box-shadow: 0 1em 2em 1em rgba(0,0,0,.2);
+    box-shadow: 0 1em 2em 1em rgba(0, 0, 0, 0.2);
 }
 
 .clerk-instant-search-no-results {
@@ -85,14 +84,14 @@
     margin: 0px 0px 5px 0px;
 }
 
-.clerk-view-more-results-button1{
-    color:#fff;
+.clerk-view-more-results-button1 {
+    color: #fff;
     width: 100%;
     display: block;
     padding: 1em;
     background-color: #009dd6;
     font-size: 14px;
-    border-radius:8px;
+    border-radius: 8px;
     text-align: center;
 }
 
@@ -104,15 +103,14 @@
     font-size: 1em;
     font-weight: bold;
     border-bottom: 1px dotted #000000;
-    font-family: "Roboto",sans-serif;
-
+    font-family: "Roboto", sans-serif;
 }
 
 /* Products */
 
 .clerk-instant-search-product {
     display: flex;
-    padding: .2em;
+    padding: 0.2em;
     margin: 0px 0px 5px 0px;
     color: #242424;
 }
@@ -142,18 +140,16 @@
     width: 6em;
     height: 6em;
     margin-right: 1em;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    object-fit: cover;
 }
 
 .clerk-instant-search-product-name {
     max-height: 3.5em;
-    margin: 0em 0em .2em 0em;
+    margin: 0em 0em 0.2em 0em;
     padding: 0px 5px 0px 0px;
     overflow: hidden;
-    font-weight:700;
-    font-family: "Roboto",sans-serif;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
     color: #222222;
 }
 
@@ -161,78 +157,75 @@
     font-size: 0.8em;
     color: #964a44;
     font-weight: bold;
-    font-family: "Roboto",sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 .clerk-instant-search-product-list-price {
     display: inline-block;
-    margin-right: .5em;
-    opacity: .8;
+    margin-right: 0.5em;
+    opacity: 0.8;
     font-weight: 700;
     text-decoration: line-through;
     color: #c9c9c9;
-    font-family: "Oswald",sans-serif;
+    font-family: "Oswald", sans-serif;
 }
 
 .clerk-instant-search-product-price {
     display: inline-block;
     font-weight: 700;
-    font-family: "Oswald",sans-serif;
-    color:#222222;
+    font-family: "Oswald", sans-serif;
+    color: #222222;
 }
 
 .clerk-instant-search-product-button {
     flex: 0 0 auto;
-    margin: .2em auto;
-    padding: .8em 2em;
+    margin: 0.2em auto;
+    padding: 0.8em 2em;
     border: none;
-    border-radius: .5em;
+    border-radius: 0.5em;
     background-color: #b6c254;
     color: white;
     text-transform: uppercase;
     text-align: center;
     white-space: nowrap;
     font-weight: bold;
-    font-size: .8em;
+    font-size: 0.8em;
     cursor: pointer;
 }
 
 .clerk-instant-search-product-button-not-in-stock {
     flex: 0 0 auto;
-    margin: .2em auto;
-    padding: .8em 2em;
+    margin: 0.2em auto;
+    padding: 0.8em 2em;
     border: none;
-    border-radius: .5em;
+    border-radius: 0.5em;
     color: black;
     text-transform: uppercase;
     text-align: center;
     white-space: nowrap;
     font-weight: bold;
-    font-size: .8em;
+    font-size: 0.8em;
     cursor: pointer;
 }
-
 
 /* Suggestions */
 
 .clerk-icon {
     color: lightgray;
-    margin-right: .5em;  
+    margin-right: 0.5em;
 }
 
 .clerk-instant-search-suggestions {
     margin-bottom: 1em;
 }
 
-
 .clerk-instant-search-suggestion {
-    padding: .1em;
+    padding: 0.1em;
 }
 
 /* Categories */
 .clerk-instant-search-categories {
     margin-bottom: 1em;
-
 }
 
 .clerk-instant-search-category {
@@ -249,17 +242,14 @@
     color: black;
 }
 
-
 /* Pages */
 .clerk-instant-search-pages {
     margin-bottom: 1em;
-
 }
 
 .clerk-instant-search-page {
-    padding: .1em;
+    padding: 0.1em;
 }
-
 
 @media screen and (min-width: 1200px) {
     .clerk-instant-search-container {
@@ -276,7 +266,7 @@
     .clerk-col-1 {
         flex: 2;
     }
-    
+
     .clerk-col-2 {
         flex: 1;
     }

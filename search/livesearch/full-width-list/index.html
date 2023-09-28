@@ -3,8 +3,8 @@
         {% if products.length > 0 %}
         <div class="clerk-instant-search-col clerk-col-1">
             <div class="clerk-instant-search-products">
-                <div class="clerk-instant-search-title">Produktre</div>
-                {% for product in products %}
+                <div class="clerk-instant-search-title">Products</div>
+                {% for product in products %} {% assign currency_symbol = "€" %}
                 <div class="clerk-instant-search-product clerk-instant-search-key-selectable">
                     <a href="{{product.url}}" class="clerk-instant-search-link">
                         <div class="clerk-instant-search-product-image" style="background-image: url('{{ product.image }}');"></div>
@@ -12,24 +12,16 @@
                             <div class="clerk-instant-search-product-brand">{{product.brand}}</div>
                             <div class="clerk-instant-search-product-name">{{ product.name | highlight query }}</div>
                             {% if product.price < product.list_price %}
-                            <div class="clerk-instant-search-product-price">£{{ product.price | money }}</div>
-                            <div class="clerk-instant-search-product-list-price">£{{ product.list_price | money }}</div>
+                            <div class="clerk-instant-search-product-price">{{ currency_symbol }} {{ product.price | money }}</div>
+                            <div class="clerk-instant-search-product-list-price">{{ currency_symbol }} {{ product.list_price | money }}</div>
                             {% else %}
-                            <div class="clerk-instant-search-product-price">£{{ product.price | money }}</div>
+                            <div class="clerk-instant-search-product-price">{{ currency_symbol }} {{ product.price | money }}</div>
                             {% endif %}
                         </div>
                     </a>
                 </div>
                 {% endfor %} {% if hits > products.length %}
-                <a class="clerk-view-more-results-button1" href="/module/clerk/search?search_query={{ query}}">
-                    <u>
-                        See
-                        <b>{{ hits }}</b>
-                        more results for "
-                        <i>{{ query }}</i>
-                        "
-                    </u>
-                </a>
+                <a class="clerk-instant-search-more-results" href="/module/clerk/search?search_query={{ query}}">See more results</a>
                 {% endif %}
             </div>
         </div>
@@ -38,7 +30,7 @@
             <div class="clerk-instant-search-suggestions">
                 {% if suggestions.length > 1 %}
                 <div class="clerk_instant_search_suggestions_wrap">
-                    <div class="clerk-instant-search-title">Forslag</div>
+                    <div class="clerk-instant-search-title">Suggestions</div>
                     {% for suggestion in suggestions %} {% if suggestion != query %}
                     <div class="clerk-instant-search-category clerk-instant-search-key-selectable">
                         <a class="clerk_instant_search_link" href="/module/clerk/search?search_query={{suggestion}}">{{ suggestion | highlight query }}</a>
@@ -49,7 +41,7 @@
             </div>
             {% if categories.length > 0 %}
             <div class="clerk-instant-search-categories">
-                <div class="clerk-instant-search-title">Kategorier</div>
+                <div class="clerk-instant-search-title">Categories</div>
                 {% for category in categories %}
                 <div class="clerk-instant-search-category clerk-instant-search-key-selectable">
                     <a href="{{category.url}}">{{ category.name | highlight query }}</a>
@@ -58,7 +50,7 @@
             </div>
             {% endif %} {% if pages.length > 0 %}
             <div class="clerk-instant-search-pages">
-                <div class="clerk-instant-search-title">Sider</div>
+                <div class="clerk-instant-search-title">Pages</div>
                 {% for page in pages %}
                 <div class="clerk-instant-search-category clerk-instant-search-key-selectable">
                     <a href="{{ page.url }}">
