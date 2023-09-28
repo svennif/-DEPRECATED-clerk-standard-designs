@@ -1,0 +1,15 @@
+<div data-name="container1" class="clerk-search-result-wrapper">
+    {% if query.length > 0 %}
+    <h1 id="nj0N4lrx" class="clerk-search-result-title">{{ hits }} results for "{{query}}"</h1>
+    {% endif %}
+    <div class="clerk-grid-wrapper">
+        {% for item in products %} {% assign currency_symbol = "€" %}
+        <div class="clerk-content"></div>
+        {% endfor %}
+    </div>
+    {% if count > products.length %}
+    <div data-group="group1" class="clerk-see-more-button-wrapper" data-container="true">
+        <button class="clerk-see-more-button" onclick="Clerk('content', '#{{ content.id }}', 'more', 20);">See more results</button>
+    </div>
+    {% endif %}
+</div>

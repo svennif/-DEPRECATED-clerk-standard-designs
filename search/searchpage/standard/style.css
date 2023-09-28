@@ -1,0 +1,77 @@
+.clerk-search-result-wrapper {
+    padding: 0px 0px 0px 0px;
+    background-color: #ffffff00;
+    border-radius: 0px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.clerk-product-wrapper:hover {
+    text-decoration: none;
+    color: #442913;
+}
+
+.clerk-product-image {
+    height: 240px;
+    width: 240px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.clerk-product-information {
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.clerk-product-information-name:hover {
+    text-decoration: underline;
+}
+
+.clerk-see-more-button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.clerk-see-more-button {
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.clerk-see-more-button:hover {
+    background: #000;
+    color: #fff;
+}
+
+.clerk-grid-wrapper {
+    width: 100%;
+    display: grid !important;
+    column-gap: 24px;
+    row-gap: 24px;
+    position: relative;
+    text-decoration: none;
+    color: #000;
+    justify-content: center;
+}
+
+.clerk-grid-wrapper {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+@media screen and (max-width: 896px) {
+    .clerk-grid-wrapper {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media screen and (max-width: 448px) {
+    .clerk-grid-wrapper {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
