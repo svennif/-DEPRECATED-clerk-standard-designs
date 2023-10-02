@@ -1,19 +1,15 @@
-<div class="p-lg">
-    <div data-name="container3" class="clerk-wrapper">
-        <div data-group="group1" data-container="true" class="clerk-wrapper-child">
-            <div class="clerk-headline-wrapper">
-                <h1 class="clerk-headline">{{headline}}</h1>
+<div class="clerk-wrapper">
+    <div class="clerk-headline-wrapper">
+        <h1 class="clerk-headline">{{headline}}</h1>
+    </div>
+    <div class="clerk-slider-wrapper">
+        <div class="clerk-slider">
+            <!-- Change this to change the currency symbol -->
+            {% for item in products %} {% assign currency_symbol = "€" %}
+            <div class="clerk-slider-content">
+                <!-- SLIDER CONTENT GOES IN HERE -->
             </div>
-            <div data-name="slider1" class="clerk-slider-wrapper">
-                <div data-group="group1" data-container="true" class="clerk-slider">
-                    <!-- Change this to change the currency symbol -->
-                    {% for item in products %} {% assign currency_symbol = "€" %}
-                    <div class="clerk-slider-content">
-                        <!-- SLIDER CONTENT GOES IN HERE -->
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
