@@ -171,7 +171,7 @@
 
 .facet_wrap {
     position: relative;
-    background: transparent;
+    background: #fff;
     width: calc(100% - 0px);
     margin: 0px;
     border-top: none;
