@@ -35,7 +35,7 @@
 
 .clerk-instant-search {
     overflow-y: scroll;
-    height: calc(100vh - 8em);
+    height: auto;
     width: 100%;
     min-width: 320px;
     max-width: 1000px;
