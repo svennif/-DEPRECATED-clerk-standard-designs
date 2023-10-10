@@ -1,0 +1,321 @@
+.clerk-instant-search a:hover {
+    color: black;
+}
+@media screen and (min-width: 1200px) {
+    .clerk-instant-search-container {
+        width: 50%;
+        right: 386px !important;
+    }
+    .clerk-instant-search-products {
+        padding-right: 2em;
+    }
+    .clerk-instant-search-grid {
+        display: flex;
+    }
+
+    .clerk-col-1 {
+        flex: 2;
+    }
+
+    .clerk-col-2 {
+        flex: 1;
+    }
+
+    .clerk-mobile-button {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .clerk-instant-search-container {
+        right: 0px !important;
+        width: 100%;
+    }
+    .clerk-mobile-button {
+        display: none;
+    }
+    .clerk-instant-search-button-container {
+        display: none;
+    }
+}
+@media screen and (max-width: 767px) {
+    .clerk-instant-search-container {
+        right: 0px !important;
+        width: 100%;
+    }
+    .clerk-instant-search-grid {
+        display: block;
+    }
+    .clerk-instant-search-button-container {
+        display: none;
+    }
+}
+
+.clerk-instant-search {
+    padding: 20px;
+}
+
+.clerk-instant-search-container a {
+    text-decoration: none !important;
+}
+
+.clerk-instant-search {
+    overflow: scroll;
+    height: calc(100vh - 6em);
+    width: 100%;
+    min-width: 650px;
+    max-width: 1000px;
+    margin: 0.2em auto;
+    background-color: white;
+    border: 1px solid #eee;
+    border-top: 0px;
+    border-radius: 5px 5px 10px 10px;
+    box-shadow: 0 1em 2em 1em rgba(0, 0, 0, 0.2);
+}
+
+.clerk-instant-search-no-results {
+    padding: 1em;
+    font-style: italic;
+    text-align: center;
+}
+
+.clerk-instant-search-alternate-query {
+    margin: 0px 0px 5px 0px;
+}
+
+.clerk-view-more-results-button1 {
+    color: #fff;
+    width: 100%;
+    display: block;
+    padding: 1em;
+    background-color: #009dd6;
+    font-size: 14px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.clerk-instant-search-title {
+    color: black;
+    margin: 0px 0px 5px 0px;
+    padding: 0px 0px 10px 0px;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: bold;
+    border-bottom: 1px dotted #000000;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Products */
+
+.clerk-instant-search-product {
+    display: flex;
+    padding: 0.2em;
+    margin: 0px 0px 5px 0px;
+    color: #242424;
+}
+
+.clerk-instant-search-product:hover .clerk-instant-search-product-name {
+    color: black;
+}
+
+.clerk-instant-search-product:hover .clerk-instant-search-product-button {
+    transform: scale(1.05);
+}
+
+.clerk-instant-search-link {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.clerk-instant-search-link > * {
+    flex: 1 1 auto;
+}
+.clerk-instant-search-link > *:first-child {
+    flex: 0 0 auto;
+}
+
+.clerk-instant-search-product-image {
+    display: inline-block;
+    width: 6em;
+    height: 6em;
+    margin-right: 1em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.clerk-instant-search-product-name {
+    max-height: 3.5em;
+    margin: 0em 0em 0.2em 0em;
+    padding: 0px 5px 0px 0px;
+    overflow: hidden;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+    color: #222222;
+}
+
+.clerk-instant-search-product-brand {
+    font-size: 0.8em;
+    color: #964a44;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+}
+
+.clerk-instant-search-product-list-price {
+    display: inline-block;
+    margin-right: 0.5em;
+    opacity: 0.8;
+    font-weight: 700;
+    text-decoration: line-through;
+    color: #c9c9c9;
+    font-family: "Oswald", sans-serif;
+}
+
+.clerk-instant-search-product-price {
+    display: inline-block;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif;
+    color: #222222;
+}
+
+.clerk-instant-search-product-button {
+    flex: 0 0 auto;
+    margin: 0.2em auto;
+    padding: 0.8em 2em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: #b6c254;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.clerk-instant-search-product-button-not-in-stock {
+    flex: 0 0 auto;
+    margin: 0.2em auto;
+    padding: 0.8em 2em;
+    border: none;
+    border-radius: 0.5em;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+/* Suggestions */
+
+.clerk-icon {
+    color: lightgray;
+    margin-right: 0.5em;
+}
+
+.clerk-instant-search-suggestions {
+    margin-bottom: 1em;
+}
+
+.clerk-instant-search-suggestion {
+    padding: 0.1em;
+}
+
+/* Categories */
+.clerk-instant-search-categories {
+    margin-bottom: 1em;
+}
+
+.clerk-instant-search-category {
+    padding: 5px;
+    margin: 5px;
+    width: auto;
+    display: inline-block;
+    border: 1px solid #617948;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.clerk-instant-search-category a {
+    color: black;
+}
+
+/* Pages */
+.clerk-instant-search-pages {
+    margin-bottom: 1em;
+}
+
+.clerk-instant-search-page {
+    padding: 0.1em;
+}
+
+@media screen and (min-width: 1200px) {
+    .clerk-instant-search-container {
+        width: 50%;
+        right: 386px;
+    }
+    .clerk-instant-search-products {
+        padding-right: 2em;
+    }
+    .clerk-instant-search-grid {
+        display: flex;
+    }
+
+    .clerk-col-1 {
+        flex: 2;
+    }
+
+    .clerk-col-2 {
+        flex: 1;
+    }
+
+    .clerk-mobile-button {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .clerk-instant-search-container {
+        right: 0px;
+        width: 100%;
+    }
+    .clerk-mobile-button {
+        display: none;
+    }
+    .clerk-instant-search-button-container {
+        display: none;
+    }
+}
+@media screen and (max-width: 767px) {
+    .clerk-instant-search-container {
+        right: 0px;
+        width: 100%;
+    }
+    .clerk-instant-search-grid {
+        display: block;
+    }
+    .clerk-instant-search-button-container {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 800px) {
+    .clerk-instant-search {
+        min-width: 0px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .clerk-instant-search {
+        min-width: 200px;
+    }
+    .clerk-instant-search-col {
+        margin: 0px 0px 20px 0px;
+    }
+    .clerk-instant-search-product-name {
+        height: 3.5em;
+    }
+}

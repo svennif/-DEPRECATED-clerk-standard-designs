@@ -1,38 +1,33 @@
 <div class="clerk-sidebar">
-    <div class="clerk-sidebar-title Drawer__Title Heading u-h6">{{headline}}</div>
+    <div class="clerk-sidebar-title">{{headline}}</div>
     <div class="clerk-sidebar-grid">
         <div class="clerk-sidebar-col">
             <div class="clerk-sidebar-products">
                 {% for product in products %}
-                    <div class="clerk-sidebar-product clerk-sidebar-key-selectable">
-                        <div data-name="customHtml1" id="dqZTWKfb" class="clerk-design-component-dqZTWKfb">
-                            <a class="clerk_link" href="{{ product.url }}">
-                                <div class="clerk_image_wrapper">
-                                    <img class="clerk_product_image" loading="lazy" src="{{ product.images }}" />
-                                </div>
-                            </a>
+                <div class="clerk-sidebar-product">
+                    <div class="clerk-sidebar-image-wrapper">
+                        <a class="clerk_link" href="{{ product.url }}">
+                            <div class="clerk_image_wrapper">
+                                <img class="clerk_product_image" loading="lazy" src="{{ product.images }}" />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="clerk-sidebar-info-wrapper">
+                        <div class="clerk-sidebar-product-name">
+                            <a href="{{ product.url }}">{{product.name}}</a>
                         </div>
-                        <div data-name="container1" id="rgYcn7XW" class="clerk-design-component-rgYcn7XW">
-                            <div data-group="group1" data-container="true">
-                                <div id="GLcrvxXZ" class="clerk-design-component-GLcrvxXZ undefined">
-                                    <p>{{product.name}}</p>
-                                </div>
-                                <div data-name="container1" id="34HLeIjA" class="clerk-design-component-34HLeIjA">
-                                    <div data-group="group1" data-container="true">
-                                        {% if product.on_sale == true %}
-                                        <div id="TXgXe23x" class="clerk-design-component-TXgXe23x designs-price">
-                                            <span class="clerk-price">{{ currency_symbol | replace "." "" }} {{ product.list_price | currency_converter | money 2 "." "." }}</span>
-                                        </div>
-                                        {% endif %}
-                                        <div id="OVnSr6wy" class="clerk-design-component-OVnSr6wy designs-price">
-                                            <span class="clerk-price">{{ currency_symbol | replace "." "" }} {{ product.price | currency_converter | money 2 "." "." }}</span>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="clerk-sidebar-price-wrapper">
+                            {% if product.on_sale == true %}
+                            <div class="clerk-sidebar-normal-price">
+                                <span class="clerk-price">{{ currency_symbol | replace "." "" }} {{ product.list_price | currency_converter | money 2 "." "." }}</span>
+                            </div>
+                            {% endif %}
+                            <div class="clerk-sidebar-on_sale-price">
+                                <span class="clerk-price">{{ currency_symbol | replace "." "" }} {{ product.price | currency_converter | money 2 "." "." }}</span>
                             </div>
                         </div>
-                        </div>
-                </a>
+                    </div>
+                </div>
                 {% endif %} {% endfor %}
             </div>
         </div>
