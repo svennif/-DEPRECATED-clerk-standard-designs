@@ -96,9 +96,8 @@
 .clerk-facet-group {
     margin-bottom: 0px;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 14px;
     color: #e4e4e4;
-    letter-spacing: 1px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -262,6 +261,7 @@ input.clerk-facet-show-more:checked + .clerk-facet-group-facets + label.clerk-fa
 .clerk-facet-name {
     overflow: hidden;
     height: 1.8em;
+    font-family: inherit;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 89%;
