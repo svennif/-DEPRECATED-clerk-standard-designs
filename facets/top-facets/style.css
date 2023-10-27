@@ -10,10 +10,6 @@
     text-align: start;
 }
 
-h2 {
-    display: none;
-}
-
 .clerk_sort_select:focus-visible {
     outline: none;
 }
