@@ -44,16 +44,16 @@
 */
 .clerk-slider-content {
     display: inline-block;
-    width: calc(25%);
+    width: calc(25% - 0px);
 }
-@media screen and (max-width: 896px) {
+@media screen and (max-width: 768px) {
     .clerk-slider-content {
         width: calc(50%);
     }
 }
-@media screen and (max-width: 448px) {
+@media screen and (max-width: 480px) {
     .clerk-slider-content {
-        width: calc(100%);
+        width: calc(50%);
     }
 }
 
