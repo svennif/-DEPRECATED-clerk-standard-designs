@@ -61,11 +61,15 @@
 
 .clerk-instant-search-more-results {
     padding: 1em;
+    margin: 1em;
+    display: flex;
+    justify-content: center;
+    max-width: 50%;
     background-color: #9fc9eb;
     font-size: 14px;
     text-align: center;
     cursor: pointer;
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
     border: none;
 }

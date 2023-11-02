@@ -44,11 +44,13 @@
     color: #fff;
     cursor: pointer;
     padding: 15px;
+    border: none;
 }
 
 .clerk-see-more-button:hover {
     background: #000;
     color: #fff;
+    border: none;
 }
 
 .clerk-grid-wrapper {
@@ -72,6 +74,6 @@
 }
 @media screen and (max-width: 448px) {
     .clerk-grid-wrapper {
-        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
