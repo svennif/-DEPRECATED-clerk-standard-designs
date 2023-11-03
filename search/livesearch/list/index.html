@@ -4,27 +4,25 @@
         <div class="clerk-instant-search-col clerk-col-1">
             <div class="clerk-instant-search-products">
                 <div class="clerk-instant-search-title">Produkter</div>
-                {% for product in products %}
+                {% for item in products %} {% assign currency_symbol %}
                 <div class="clerk-instant-search-product clerk-instant-search-key-selectable">
-                    <a href="{{product.url}}" class="clerk-instant-search-link">
-                        <div class="clerk-instant-search-product-image" style="background-image: url('{{ product.image }}');"></div>
+                    <a href="{{item.url}}" class="clerk-instant-search-link">
+                        <div class="clerk-instant-search-product-image" style="background-image: url('{{ item.image }}');"></div>
                         <div class="clerk-instant-search-info-wrap">
-                            <div class="clerk-instant-search-product-brand">{{product.brand}}</div>
-                            <div class="clerk-instant-search-product-name">{{ product.name | highlight query }}</div>
-                            {% if product.price < product.list_price %}
-                            <div class="clerk-instant-search-product-price">€{{ product.price | money }}</div>
-                            <div class="clerk-instant-search-product-list-price">€{{ product.list_price | money }}</div>
+                            <div class="clerk-instant-search-product-brand">{{item.brand}}</div>
+                            <div class="clerk-instant-search-product-name">{{ item.name | highlight query }}</div>
+                            {% if item.price < item.list_price %}
+                            <div class="clerk-instant-search-product-price">{{ item.price | money }}</div>
+                            <div class="clerk-instant-search-product-list-price">{{ item.list_price | money }}</div>
                             {% else %}
-                            <div class="clerk-instant-search-product-price">€{{ product.price | money }}</div>
+                            <div class="clerk-instant-search-product-price">{{ item.price | money }}</div>
                             {% endif %}
                         </div>
                     </a>
                 </div>
                 {% endfor %} {% if hits > products.length %}
                 <a class="clerk-view-more-results-button1" href="/module/clerk/search?search_query={{ query}}">
-                    <u>
-                        Se flere resultater
-                    </u>
+                    <u>Se flere resultater</u>
                 </a>
                 {% endif %}
             </div>
