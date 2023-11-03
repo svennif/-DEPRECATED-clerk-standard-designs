@@ -12,19 +12,19 @@
             <div class="clerk-instant-search-products">
                 <div class="clerk-instant-search-title">Products</div>
                 <div class="clerk-instant-search-product-grid">
-                    {% for product in products %} {% assign currency_symbol = "€" %}
+                    {% for item in products %} {% assign currency_symbol %}
                     <div class="clerk-instant-search-product clerk-instant-search-key-selectable">
                         <!-- PRODUCT INFORMATION -->
-                        <a href="{{product.url}}" class="clerk-instant-search-link">
-                            <img class="clerk-instant-search-product-image" src="{{ product.image }}" alt="{{ product.name }}"/> 
+                        <a href="{{item.url}}" class="clerk-instant-search-link">
+                            <img class="clerk-instant-search-product-image" src="{{ item.image }}" alt="{{ item.name }}"/> 
                             <div>
-                                <div class="clerk-instant-search-product-brand">{{product.brand}}</div>
-                                <div class="clerk-instant-search-product-name">{{ product.name | highlight query }}</div>
-                                {% if product.price < product.list_price %}
-                                <div class="clerk-instant-search-product-price">{{ currency_symbol }} {{ product.price | money }}</div>
-                                <div class="clerk-instant-search-product-list-price">{{ currency_symbol }} {{ product.list_price | money }}</div>
+                                <div class="clerk-instant-search-product-brand">{{item.brand}}</div>
+                                <div class="clerk-instant-search-product-name">{{ item.name | highlight query }}</div>
+                                {% if item.price < item.list_price %}
+                                <div class="clerk-instant-search-product-price">{{ currency_symbol }} {{ item.price | money }}</div>
+                                <div class="clerk-instant-search-product-list-price">{{ currency_symbol }} {{ item.list_price | money }}</div>
                                 {% else %}
-                                <div class="clerk-instant-search-product-price">{{ currency_symbol }} {{ product.price | money }}</div>
+                                <div class="clerk-instant-search-product-price">{{ currency_symbol }} {{ item.price | money }}</div>
                                 {% endif %}
                             </div>
                         </a>

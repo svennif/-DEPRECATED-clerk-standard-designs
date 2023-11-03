@@ -12,30 +12,30 @@
             <div class="clerk-instant-search-products">
                 <div class="clerk-instant-search-title">Products</div>
                 <div class="clerk-instant-search-product-grid">
-                    {% for product in products %} {% assign currency_symbol = "€" %}
+                    {% for item in products %} {% assign currency_symbol %}
                     <div class="clerk-instant-search-product clerk-instant-search-key-selectable">
                         <!-- PRODUCT INFORMATION -->
-                        <a href="{{product.url}}" class="clerk-instant-search-link">
-                            <div class="clerk-instant-search-product-image" style="background-image: url('{{ product.image }}');"></div>
+                        <a href="{{item.url}}" class="clerk-instant-search-link">
+                            <div class="clerk-instant-search-product-image" style="background-image: url('{{ item.image }}');"></div>
                             <div class="clerk-instant-search-product-info">
-                                <div class="clerk-instant-search-product-name">{{ product.name | highlight query }}</div>
-                                {% if product.variant_prices.first < product.variant_prices.last %} {% if product.price < product.list_price %}
+                                <div class="clerk-instant-search-product-name">{{ item.name | highlight query }}</div>
+                                {% if item.variant_prices.first < item.variant_prices.last %} {% if item.price < item.list_price %}
                                 <div class="clerk-instant-search-price-wrapper">
-                                    <div class="clerk-instant-search-product-list-price">{{ product.list_price | money }} {{ currency_symbol }}</div>
-                                    <div class="clerk-instant-search-product-price">{{ product.price | money }} {{ currency_symbol }}</div>
+                                    <div class="clerk-instant-search-product-list-price">{{ item.list_price | money }} {{ currency_symbol }}</div>
+                                    <div class="clerk-instant-search-product-price">{{ item.price | money }} {{ currency_symbol }}</div>
                                 </div>
                                 {% else %}
                                 <div class="clerk-instant-search-price-wrapper">
-                                    <div class="clerk-instant-search-product-price">{{ product.price | money }} {{ currency_symbol }}</div>
+                                    <div class="clerk-instant-search-product-price">{{ item.price | money }} {{ currency_symbol }}</div>
                                 </div>
-                                {% endif %} {% else %} {% if product.price < product.list_price %}
+                                {% endif %} {% else %} {% if item.price < item.list_price %}
                                 <div class="clerk-instant-search-price-wrapper">
-                                    <div class="clerk-instant-search-product-list-price">{{ product.list_price | money }} {{ currency_symbol }}</div>
-                                    <div class="clerk-instant-search-product-price">{{ product.price | money }} {{ currency_symbol }}</div>
+                                    <div class="clerk-instant-search-product-list-price">{{ item.list_price | money }} {{ currency_symbol }}</div>
+                                    <div class="clerk-instant-search-product-price">{{ item.price | money }} {{ currency_symbol }}</div>
                                 </div>
                                 {% else %}
                                 <div class="clerk-instant-search-price-wrapper">
-                                    <div class="clerk-instant-search-product-price">{{ product.price | money }} {{ currency_symbol }}</div>
+                                    <div class="clerk-instant-search-product-price">{{ item.price | money }} {{ currency_symbol }}</div>
                                 </div>
                                 {% endif %} {% endif %}
                             </div>
