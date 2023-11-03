@@ -1,3 +1,6 @@
+WARNING THIS MIGHT NOT BE UPDATED UNTIL AUTOMATIC ACTIONS ARE MADE. 
+Best to copy the code from the [mjml-template file](mjml-template)
+
 ```html
 
 {#

@@ -145,7 +145,7 @@
               padding-bottom="{{ __design__pad_0 }}"
               padding="{{ __design__pad_10 }} {{ __design__pad_25 }}"
               href="{{ __design__shop_domain }}"
-              src="{{ __design__shop_logo_url }}"
+              src="{{ input_shop_logo_url }}"
               target="_blank"
               title="{{ __design__shop_title }}"
               width="{{ __design__img_w_small }}"></mj-image>
@@ -170,8 +170,8 @@
             background-color="{{ __design__section_bg_color }}"
             padding="{{ __design__pad_0 }}">
             <mj-column>
-           <mj-image align="center" src="{{ input_banner_image }}"> </mj-image>
-           </mj-column>
+            <mj-image align="center" src="{{ input_banner_image }}"> </mj-image>
+            </mj-column>
             </mj-section>
         
         <mj-section
@@ -273,7 +273,7 @@
           padding-top="{{ __design__pad_0 }}">
           <mj-column>
             <mj-image
-              src="{{ __design__shop_logo_url }}"
+              src="{{ input_shop_logo_url }}"
               href="{{ __design__shop_domain }}"
               alt="Clerk logo"
               align="center"
@@ -335,4 +335,3 @@
         </mj-section>
       </mj-body>
     </mjml>
-    
