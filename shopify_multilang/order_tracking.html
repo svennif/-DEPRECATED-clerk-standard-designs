@@ -1,0 +1,44 @@
+<!-- Start of Clerk.io E-commerce Personalisation tool - www.clerk.io -->
+<script>
+    (function (w, d) {
+        var e = d.createElement('script'); e.type = 'text/javascript'; e.async = true;
+        e.src = 'https://cdn.clerk.io/clerk.js';
+        var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s);
+        w.__clerk_q = w.__clerk_q || []; w.Clerk = w.Clerk || function () { w.__clerk_q.push(arguments) };
+    })(window, document);
+    let clerkLocale = Shopify.locale;
+    let publicKey;
+    switch (clerkLocale) {
+        case 'en':
+            publicKey = 'yourPublicKeyEN';
+            break;
+        case 'fr':
+            publicKey = 'yourPublicKeyFR';
+            break;
+        case 'de':
+            publicKey = 'yourPublicKeyDE';
+            break;
+        // Add more cases as needed
+    }
+    Clerk('config', {
+        key: publicKey
+    });
+    let clerk_order_id = parseInt("'{'+'{ checkout.order.id }'+'}'");
+    document.addEventListener('DOMContentLoaded', (e) => {
+        clerk_order_id = window.Shopify.checkout.order_id
+    });
+    if (isNaN(clerk_order_id)) {
+        if (window.Shopify) {
+            clerk_order_id = window.Shopify.checkout.order_id
+        }
+    }
+    let log_sale_retry = setInterval(() => {
+        if (!isNaN(clerk_order_id)) {
+            Clerk('call', 'log/sale/shopify', {
+                sale: clerk_order_id
+            });
+            clearInterval(log_sale_retry);
+        }
+    }, 100);
+</script>
+<!-- End of Clerk.io E-commerce Personalisation tool - www.clerk.io -->
