@@ -12,7 +12,7 @@
             <div class="clerk-instant-search-products">
                 <div class="clerk-instant-search-title">Products</div>
                 <div class="clerk-instant-search-product-grid">
-                    {% for item in products %} {% assign currency_symbol %}
+                    {% for item in products %} {% assign currency_symbol = '' %}
                     <div class="clerk-instant-search-product clerk-instant-search-key-selectable">
                         <!-- PRODUCT INFORMATION -->
                         <a href="{{item.url}}" class="clerk-instant-search-link">
@@ -33,7 +33,9 @@
                 </div>
             </div>
             {% if hits > products.length %}
-            <a class="clerk-instant-search-more-results" href="/module/clerk/search?search_query={{ query}}">See more results</a>
+            <div class="clerk-instant-search-more-results-wrapper">
+                <a class="clerk-instant-search-more-results" href="/module/clerk/search?search_query={{ query}}">See more results</a>
+            </div>
             {% endif %}
         </div>
         {% endif %} {% if (suggestions.length + categories.length) > 0 %}
