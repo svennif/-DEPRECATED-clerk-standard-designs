@@ -145,7 +145,7 @@
               padding-bottom="{{ __design__pad_0 }}"
               padding="{{ __design__pad_10 }} {{ __design__pad_25 }}"
               href="{{ __design__shop_domain }}"
-              src="{{ input_shop_logo_url }}"
+              src="{{ input_shop_logo_image_url }}"
               target="_blank"
               title="{{ __design__shop_title }}"
               width="{{ __design__img_w_small }}"></mj-image>
@@ -273,9 +273,9 @@
           padding-top="{{ __design__pad_0 }}">
           <mj-column>
             <mj-image
-              src="{{ input_shop_logo_url }}"
+              src="{{ input_shop_logo_image_url }}"
               href="{{ __design__shop_domain }}"
-              alt="Clerk logo"
+              alt="Shop logo"
               align="center"
               border="none"
               width="{{ __design__img_w_small }}"
