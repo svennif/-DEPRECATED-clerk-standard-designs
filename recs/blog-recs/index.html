@@ -1,0 +1,24 @@
+<div class="clerk-wrapper">
+    <div class="clerk-headline-wrapper">
+        <h2 class="clerk-headline">{{headline}}</h2>
+    </div>
+    <div class="clerk-slider-wrapper">
+        <div class="clerk-slider">
+            <!-- Change this to change the currency symbol -->
+            {% for page in pages %}
+            <div class="clerk-slider-content">
+                <a class="clerk-link" href="{{ page.url }}">
+                    <div class="clerk-image_wrapper">
+                        <img class="clerk-product-image" loading="lazy" src="{{ page.image }}" />
+                    </div>
+                </a>
+                <div class="clerk-product-info-wrap">
+                    <a class="clerk-link" href="{{ page.url }}">
+                        <p class="clerk-product-name">{{page.title}}</p>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

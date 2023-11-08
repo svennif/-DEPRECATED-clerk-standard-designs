@@ -1,0 +1,15 @@
+.clerk-slider-item {
+    width: calc(25% - 3px);
+}
+
+@media screen and (max-width: 896px) {
+    .clerk-slider-item {
+        width: calc(50%);
+    }
+}
+
+@media screen and (max-width: 448px) {
+    .clerk-slider-item {
+        width: calc(50%);
+    }
+}
