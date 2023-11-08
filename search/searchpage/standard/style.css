@@ -7,32 +7,6 @@
     width: 100%;
 }
 
-.clerk-product-wrapper:hover {
-    text-decoration: none;
-    color: #442913;
-}
-
-.clerk-product-image {
-    height: 240px;
-    width: 240px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-}
-
-.clerk-product-information {
-    justify-content: center;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
-}
-
-.clerk-product-information-name:hover {
-    text-decoration: underline;
-}
-
 .clerk-see-more-button-wrapper {
     width: 100%;
     display: flex;
@@ -67,12 +41,12 @@
 .clerk-grid-wrapper {
     grid-template-columns: repeat(4, minmax(0, 1fr));
 }
-@media screen and (max-width: 896px) {
+@media screen and (max-width: 768px) {
     .clerk-grid-wrapper {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
-@media screen and (max-width: 448px) {
+@media screen and (max-width: 480px) {
     .clerk-grid-wrapper {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
