@@ -29,7 +29,7 @@
 .clerk-facet-group {
     margin-bottom: 0px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 1em;
     color: #e4e4e4;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -73,7 +73,7 @@
     -webkit-text-size-adjust: 100%;
     font-family: inherit;
     color: #000;
-    font-size: 14px;
+    font-size: 1em;
     line-height: 1.75em;
     font-weight: 400;
     box-sizing: border-box;
@@ -120,7 +120,7 @@
 .clerk-facet-group-title {
     margin-bottom: 1em;
     text-transform: uppercase;
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: bold;
     letter-spacing: 1px;
     color: #95a5a6;
@@ -138,7 +138,7 @@
     color: black;
     margin: 0;
     padding: 0.6em 0.8em;
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 input.clerk-facet-show-more,
@@ -150,7 +150,7 @@ label.clerk-facet-show-more {
     display: block;
     padding-top: 0.5em;
     text-align: center;
-    font-size: 0.9em;
+    font-size: 1em;
     color: #95a5a6;
     cursor: pointer;
 }
@@ -167,7 +167,7 @@ input.clerk-facet-show-more:checked + .clerk-facet-group-facets + label.clerk-fa
     clear: both;
     margin: 0.4em 0;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 1em;
 }
 .clerk-facet.hidden {
     display: none;
@@ -206,7 +206,7 @@ input.clerk-facet-show-more:checked + .clerk-facet-group-facets + label.clerk-fa
 .clerk-facet-count {
     float: right;
     padding-top: 0.2em;
-    font-size: 0.9em;
+    font-size: 1em;
     color: #95a5a6;
 }
 
@@ -283,11 +283,10 @@ input.clerk-facet-show-more:checked + .clerk-facet-group-facets + label.clerk-fa
     text-align: center;
     border: 1px solid #333;
     border-width: 0 2px 2px 0;
-    font-size: 10px;
+    font-size: 1em;
     color: #e4e4e4;
     transform: translateY(calc(-50% - 5px)) rotate(45deg);
     transition: 0.3s ease-in-out;
-    font-size: 18px;
     z-index: 1;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -344,11 +343,10 @@ input.clerk-facet-show-more:checked + .clerk-facet-group-facets + label.clerk-fa
         text-align: center;
         border: 1px solid #333;
         border-width: 0 2px 2px 0;
-        font-size: 10px;
+        font-size: 1em;
         color: #e4e4e4;
         transform: translateY(calc(-50% - 5px)) rotate(45deg);
         transition: 0.3s ease-in-out;
-        font-size: 18px;
         z-index: 1;
         -webkit-user-select: none;
         -moz-user-select: none;
