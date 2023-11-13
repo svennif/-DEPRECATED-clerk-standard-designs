@@ -67,7 +67,7 @@
                 {% for page in pages %}
                 <div class="clerk-instant-search-category clerk-instant-search-key-selectable">
                     <a href="{{ page.url }}">
-                        <div class="name">{{ page.title | highlight query 'bold' true }}</div>
+                        <div class="name">{{ page.title | highlight query }}</div>
                     </a>
                 </div>
                 {% endfor %}
