@@ -1,0 +1,37 @@
+<span locale-{{ shop.locale }}
+    id="clerk-search"
+        class="clerk"
+        data-template="@search-page"
+        data-target="#clerk-search-results"
+        data-query="{{ search.terms }}"
+        data-facets-attributes='["price","categories","vendor"]'
+        data-facets-target="#clerk-search-filters"
+        data-facets-price-prepend="{{ currency.symbol }}"
+        data-facets-in-url="true"
+    {% if shop.locale == 'en' %}
+        data-facets-view-more-text="View More"
+        data-facets-searchbox-text="Search for "
+        data-facets-titles='{"vendor":"Brand","categories":"Category"}'
+        data-facets-design="FACETS_DESIGN_ID_EN"
+    {% elsif shop.locale == 'da' %}
+        data-facets-view-more-text="Se mere"
+        data-facets-searchbox-text="Søg efter "
+        data-facets-titles='{"price":"Pris","categories":"Kategorier","vendor":"Brand"}'
+        data-facets-design="FACETS_DESIGN_ID_DA"
+    {% endif %}> 
+</span>
+<div class="container">
+    <div class="clerk_flex_wrap">
+        <div id="clerk-facets-container">
+            <div id="clerk-search-filters"></div>
+        </div>
+        <div id="clerk-search-results"></div>
+    </div>
+</div>
+
+<script>
+    function toggleFacets() {
+        el = document.getElementById('clerk-facets-container');
+        el.classList.toggle('active');
+    }
+</script>
