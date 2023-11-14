@@ -215,7 +215,6 @@
     }
     .clerk-instant-search-container {
         width: 50%;
-        right: 386px;
     }
     .clerk-instant-search-products {
         padding-right: 2em;
@@ -239,7 +238,7 @@
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {
     .clerk-instant-search-container {
-        right: 0px !important;
+        left: 0px !important;
         width: 100%;
     }
     .clerk-mobile-button {
@@ -252,7 +251,7 @@
 
 @media screen and (max-width: 767px) {
     .clerk-instant-search-container {
-        right: 0px !important;
+        left: 0px !important;
         width: 100%;
         min-width: 200px !important;
     }

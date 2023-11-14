@@ -4,7 +4,7 @@
         <div class="clerk-instant-search-col clerk-col-1">
             <div class="clerk-instant-search-products">
                 <div class="clerk-instant-search-title">Produkter</div>
-                {% for item in products %} {% assign currency_symbol %}
+                {% for item in products %} {% assign currency_symbol = "" %}
                 <div class="clerk-instant-search-product clerk-instant-search-key-selectable">
                     <a href="{{item.url}}" class="clerk-instant-search-link">
                         <div class="clerk-instant-search-product-image" style="background-image: url('{{ item.image }}');"></div>
@@ -12,16 +12,16 @@
                             <div class="clerk-instant-search-product-brand">{{item.brand}}</div>
                             <div class="clerk-instant-search-product-name">{{ item.name | highlight query }}</div>
                             {% if item.price < item.list_price %}
-                            <div class="clerk-instant-search-product-price">{{ item.price | money }}</div>
-                            <div class="clerk-instant-search-product-list-price">{{ item.list_price | money }}</div>
+                            <div class="clerk-instant-search-product-price">{{ item.price | money_eu }} {{ currency_symbol }}</div>
+                            <div class="clerk-instant-search-product-list-price">{{ item.list_price | money_eu }} {{ currency_symbol }}</div>
                             {% else %}
-                            <div class="clerk-instant-search-product-price">{{ item.price | money }}</div>
+                            <div class="clerk-instant-search-product-price">{{ item.price | money_eu }} {{ currency_symbol }}</div>
                             {% endif %}
                         </div>
                     </a>
                 </div>
                 {% endfor %} {% if hits > products.length %}
-                <a class="clerk-view-more-results-button1" href="/module/clerk/search?search_query={{ query}}">
+                <a class="clerk-view-more-results-button" href="/module/clerk/search?search_query={{ query}}">
                     <u>Se flere resultater</u>
                 </a>
                 {% endif %}
@@ -68,13 +68,6 @@
 </div>
 
 <script>
-    jQuery("#searchbox").each(function () {
-        jQuery(this).submit(function (e) {
-            e.preventDefault();
-            window.location.replace(window.location.origin + "/da/module/clerk/search?search_query={{ query }}");
-        });
-    });
-
     // This script ensures that the Instant Search is always placed right under the input field when scrolling and resizing the viewport.
     // If you do not use a sticky header, then this is not necessary.
     // You should also remove .clerk-instant-search-visible { position: fixed !important; } from the the CSS below if this is your use-case.
