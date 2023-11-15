@@ -144,6 +144,7 @@
         text-align="center"
         vertical-align="top">
         <mj-column>
+        {% if input_shop_logo_image_url != 0 %}
           <mj-image
             align="center"
             border="none"
@@ -154,7 +155,7 @@
             target="_blank"
             title="{{ __design__shop_title }}"
             width="{{ __design__img_w_small }}"></mj-image>
-            
+        {% endif %}
         </mj-column>
 
       </mj-section>
@@ -177,9 +178,11 @@
           background-color="{{ __design__section_bg_color_white }}"
           padding="{{ __design__pad_0 }}">
           <mj-column>
-          <mj-image align="center" src="{{ input_banner_image }}"> </mj-image>
+          {% if input_banner_image != 0 %}
+            <mj-image align="center" src="{{ input_banner_image }}"> </mj-image>
+          {% endif %}
           </mj-column>
-          </mj-section>
+      </mj-section>
       
       <mj-section
         background-color="{{ __design__section_bg_color_white }}"
@@ -188,6 +191,7 @@
         vertical-align="top"
         padding="{{ __design__pad_0 }} {{ __design__pad_0 }} {{ __design__pad_0 }} {{ __design__pad_0 }}">
         <mj-column>
+        {% if input_headline != 0 %}
           <mj-text
             align="left"
             color="{{ __design__body_color_hx }}"
@@ -201,6 +205,8 @@
               {{ input_headline }}
             </p>
           </mj-text>
+          {% endif %}
+          {% if input_text != 0 %}
           <mj-text
             align="left"
             color="{{ __design__body_color_hx }}"
@@ -214,6 +220,7 @@
               <span style="color:{{ __design__text_alt_color_black }};font-size:{{ __design__font_size_18 }};font-family:{{ __design__font_fam_cta }}">{{ input_text }}</span>
             </p>
           </mj-text>
+          {% endif %}
         </mj-column>
       </mj-section>
       {% for product in products %}
@@ -279,6 +286,7 @@
         font-family="{{ __design__font_fam_section }}"
         padding-top="{{ __design__pad_0 }}">
         <mj-column>
+        {% if input_shop_logo_image_url != 0 %}
           <mj-image
             src="{{ input_shop_logo_image_url }}"
             href="{{ __design__shop_domain }}"
@@ -290,6 +298,7 @@
             padding-right="{{ __design__pad_10 }}"
             padding-bottom="{{ __design__pad_10 }}"
             padding-top="{{ __design__pad_10 }}"></mj-image>
+        {% endif %}
         </mj-column>
         <mj-column>
           <mj-button
