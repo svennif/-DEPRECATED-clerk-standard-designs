@@ -179,7 +179,7 @@
           padding="{{ __design__pad_0 }}">
           <mj-column>
           {% if input_banner_image != 0 %}
-            <mj-image align="center" src="{{ input_banner_image }}"> </mj-image>
+            <mj-image align="center" src="{{ input_banner_image }}" href="{{ __design__shop_domain }}"> </mj-image>
           {% endif %}
           </mj-column>
       </mj-section>
