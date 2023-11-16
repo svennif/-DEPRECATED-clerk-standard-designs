@@ -57,7 +57,7 @@
                 <div class="clerk-instant-search-title">Categories</div>
                 {% for category in categories %}
                 <div class="clerk-instant-search-category clerk-instant-search-key-selectable">
-                    <a href="{{category.url}}">{{ category.name | highlight query }}</a>
+                    <a href="{{category.url}}" class="clerk_instant_search_link">{{ category.name | highlight query }}</a>
                 </div>
                 {% endfor %}
             </div>
@@ -66,9 +66,7 @@
                 <div class="clerk-instant-search-title">Related Content</div>
                 {% for page in pages %}
                 <div class="clerk-instant-search-category clerk-instant-search-key-selectable">
-                    <a href="{{ page.url }}">
-                        <div class="name">{{ page.title | highlight query }}</div>
-                    </a>
+                    <a href="{{ page.url }}" class="clerk_instant_search_link">{{ page.title | highlight query }}</a>
                 </div>
                 {% endfor %}
             </div>
