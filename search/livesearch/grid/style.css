@@ -20,11 +20,6 @@
     margin: 0px 0px 20px 0px;
 }
 
-.clerk-instant-search-product-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
 .clerk-instant-search {
     overflow-y: auto;
     height: auto;
@@ -90,7 +85,11 @@ clerk-instant-search-more-results-wrapper{
     font-family: inherit;
 }
 
-/***** Products *****/
+/********************************************************
+
+    Products
+
+********************************************************/
 
 .clerk-instant-search-product {
     display: flex;
@@ -191,7 +190,11 @@ clerk-instant-search-more-results-wrapper{
     cursor: pointer;
 }
 
-/* Suggestions */
+/********************************************************
+
+    Suggestions
+
+********************************************************/
 
 .clerk-icon {
     color: lightgray;
@@ -206,7 +209,11 @@ clerk-instant-search-more-results-wrapper{
     padding: 0.1em;
 }
 
-/* Categories */
+/********************************************************
+
+    Categories
+
+********************************************************/
 .clerk-instant-search-categories {
     margin-bottom: 1em;
 }
@@ -221,7 +228,11 @@ clerk-instant-search-more-results-wrapper{
     font-weight: bold;
 }
 
-/* Pages */
+/********************************************************
+
+    Pages
+
+********************************************************/
 .clerk-instant-search-pages {
     margin-bottom: 1em;
 }
@@ -229,12 +240,25 @@ clerk-instant-search-more-results-wrapper{
 .clerk-instant-search-page {
     padding: 0.1em;
 }
+
+/********************************************************
+
+    Setting product columns and responsiveness
+
+********************************************************/
+
+.clerk-instant-search-product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
 @media screen and (max-width: 480px) {
 }
 
 @media screen and (max-width: 767px) {
     .clerk-instant-search-product-grid {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .clerk-instant-search-container {
@@ -245,7 +269,6 @@ clerk-instant-search-more-results-wrapper{
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {
 }
-
 
 @media screen and (min-width: 1200px) {
     .clerk-instant-search-products {
