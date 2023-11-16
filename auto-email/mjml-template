@@ -166,9 +166,9 @@
               base-url="{{ __design__shop_domain }}"
               hamburger="hamburger"
               ico-color="{{ __design__active_color }}">
-              <mj-navbar-link href="{{ __design__shop_rel_url_home }}" color="{{ __design__text_color_white }}">home</mj-navbar-link>
-              <mj-navbar-link href="{{ __design__shop_rel_url_blog }}" color="{{ __design__text_color_white }}">blog</mj-navbar-link>
-              <mj-navbar-link href="{{ __design__shop_rel_url_store }}" color="{{ __design__text_color_white }}">store</mj-navbar-link>
+              <mj-navbar-link href="{{ __design__shop_rel_url_home }}" color="{{ __design__text_color_white }}" font-family="{{ __design__font_fam_section }}">home</mj-navbar-link>
+              <mj-navbar-link href="{{ __design__shop_rel_url_blog }}" color="{{ __design__text_color_white }}" font-family="{{ __design__font_fam_section }}">blog</mj-navbar-link>
+              <mj-navbar-link href="{{ __design__shop_rel_url_store }}" color="{{ __design__text_color_white }}" font-family="{{ __design__font_fam_section }}">store</mj-navbar-link>
             </mj-navbar>
           </mj-column>
         </mj-group>
