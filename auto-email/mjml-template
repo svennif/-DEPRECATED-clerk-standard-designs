@@ -256,7 +256,8 @@
                 padding-left="{{ __design__pad_25 }}"
                 padding-right="{{ __design__pad_25 }}"
                 padding-bottom="{{ __design__pad_0 }}"
-                padding-top="{{ __design__pad_0 }}">
+                padding-top="{{ __design__pad_0 }}"
+                font-family="{{ __design__font_fam_section }}">
                 <p>{{ product.name }}</p>
                 {%if product.price < product.list_price %}
                 <p style="text-decoration:line-through;color: {{ __design__listprice_color }};font-weight: {{ __design__font_weight_400 }};opacity: {{ __design__opacity_6 }};">{{ __design__currency_symbol }}{{ product.list_price | money_eu }}</p>
@@ -346,7 +347,7 @@
         padding-top="{{ __design__pad_0 }}"
         font-family="{{ __design__font_fam_section }}">
         <mj-column>
-              <mj-text align="center" color="{{ __design__text_alt_color_black }}" line-height="12px" font-size="{{ __design__font_size_12 }}"> You can <a href="{{ input_unsubscribe }}"> unsubscribe from this list </a> </mj-text>
+              <mj-text align="center" color="{{ __design__text_alt_color_black }}" line-height="12px" font-size="{{ __design__font_size_12 }}" font-family="{{ __design__font_fam_section }}"> You can <a href="{{ input_unsubscribe }}"> unsubscribe from this list </a> </mj-text>
         </mj-column>
       </mj-section>
     </mj-body>
