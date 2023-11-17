@@ -5,6 +5,9 @@
     --clerk-font-family: inherit;
 }
 
+.clerk_instant_search_link {
+    color: var(--clerk-font-color);
+}
 .clerk_instant_search_link:hover {
     color: var(--clerk-font-color);
 }
@@ -25,7 +28,7 @@
     height: auto;
     width: 100%;
     min-width: 320px;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0.2em auto;
     background-color: #fff;
     border: 1px solid #eee;
@@ -53,7 +56,7 @@ clerk-instant-search-more-results-wrapper{
 
 .clerk-instant-search-more-results {
     padding: 1em;
-    margin: 1em;
+    margin: 1em auto;
     display: flex;
     justify-content: center;
     max-width: 50%;
@@ -108,6 +111,7 @@ clerk-instant-search-more-results-wrapper{
 
 .clerk-instant-search-link {
     display: flex;
+    flex-direction: column;
     flex: 1 1 auto;
 }
 
@@ -118,12 +122,18 @@ clerk-instant-search-more-results-wrapper{
     flex: 0 0 auto;
 }
 
+/********************************************************
+
+    Image
+
+********************************************************/
+
 .clerk-instant-search-product-image {
     display: inline-block;
-    width: 6em;
-    height: 6em;
+    width: 10em;
+    height: 10em;
     margin-right: 1em;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .clerk-instant-search-product-name {
@@ -223,9 +233,19 @@ clerk-instant-search-more-results-wrapper{
     margin: 5px;
     width: auto;
     display: inline-block;
-    border: 1px solid var(--clerk-font-color);
-    border-radius: 2px;
+    color: var(--clerk-font-color);
+    background-color: rgb(249, 249, 250);
+    border-radius: 10px;
     font-weight: bold;
+}
+
+.clerk-instant-search-category > a > {
+    color: var(--clerk-font-color);
+    text-decoration: none;
+}
+
+.clerk-highlight {
+    background-color: #fafa66;
 }
 
 /********************************************************
