@@ -201,7 +201,7 @@
             padding-bottom="{{ __design__pad_5 }}"
             padding-top="{{ __design__pad_25 }}"
             padding="{{ __design__pad_10 }} {{ __design__pad_25 }}">
-            <p style="line-height: {{ __design__font_size_60 }}; text-align: center; margin: {{ __design__pad_10 }} {{ __design__pad_0 }};font-size:{{ __design__font_size_60 }};color:{{ __design__text_alt_color_black }};font-family:{{ __design__font_fam_cta }}">
+            <p style="line-height: {{ __design__font_size_60 }}; text-align: center; margin: {{ __design__pad_10 }} {{ __design__pad_0 }};font-size:{{ __design__font_size_60 }};color:{{ __design__text_alt_color_black }};font-family:{{ __design__font_fam_section }}">
               {{ input_headline }}
             </p>
           </mj-text>
@@ -216,7 +216,7 @@
             padding-bottom="{{ __design__pad_0 }}"
             padding-top="{{ __design__pad_0 }}"
             padding="{{ __design__pad_10 }} {{ __design__pad_25 }}">
-            <p style="line-height: {{ __design__font_size_30 }}; text-align: center; margin: {{ __design__pad_10 }} {{ __design__pad_0 }};color:{{ __design__text_alt_color_black }};font-size:{{ __design__font_size_24 }};font-family:{{ __design__font_fam_cta }}">
+            <p style="line-height: {{ __design__font_size_30 }}; text-align: center; margin: {{ __design__pad_10 }} {{ __design__pad_0 }};color:{{ __design__text_alt_color_black }};font-size:{{ __design__font_size_24 }};font-family:{{ __design__font_fam_section }}">
               <span style="color:{{ __design__text_alt_color_black }};font-size:{{ __design__font_size_18 }};font-family:{{ __design__font_fam_cta }}">{{ input_text }}</span>
             </p>
           </mj-text>
@@ -266,6 +266,7 @@
               </mj-text>
               <mj-button
                 background-color="{{ __design__active_color }}"
+                font-family="{{ __design__font_fam_section }}"
                 color="{{ __design__text_color_white }}"
                 font-size="{{ __design__font_size_14 }}"
                 align="center"
