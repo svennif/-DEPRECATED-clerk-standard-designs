@@ -1,42 +1,40 @@
 <!-- Start of Clerk.io E-commerce Personalisation tool - www.clerk.io Tax-{{ tax_line.rate_percentage }} -->
 <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function () {
-        let clerkLocale = Shopify.locale;
-        let publicKey;
-        // Check which locale we are in and set the correct public key
-        switch (clerkLocale) {
-            case 'en':
-                publicKey = 'yourPublicKeyEN';
-                break;
-            case 'fr':
-                publicKey = 'yourPublicKeyFR';
-                break;
-            case 'de':
-                publicKey = 'yourPublicKeyDE';
-                break;
-            // Add more cases as needed
-        }
+    let clerkLocale = {{ shop.locale }};
+    let publicKey;
+    // Check which locale we are in and set the correct public key
+    switch (clerkLocale) {
+        case 'en':
+            publicKey = 'yourPublicKeyEN';
+            break;
+        case 'fr':
+            publicKey = 'yourPublicKeyFR';
+            break;
+        case 'de':
+            publicKey = 'yourPublicKeyDE';
+            break;
+        // Add more cases as needed
+    }
 
-        (function (w, d) {
-            var e = d.createElement('script'); e.type = 'text/javascript'; e.async = true;
-            e.src = (d.location.protocol == 'https:' ? 'https' : 'http') + '://cdn.clerk.io/clerk.js';
-            var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s);
-            w.__clerk_q = w.__clerk_q || []; w.Clerk = w.Clerk || function () { w.__clerk_q.push(arguments) };
-        })(window, document);
+    (function (w, d) {
+        var e = d.createElement('script'); e.type = 'text/javascript'; e.async = true;
+        e.src = (d.location.protocol == 'https:' ? 'https' : 'http') + '://cdn.clerk.io/clerk.js';
+        var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s);
+        w.__clerk_q = w.__clerk_q || []; w.Clerk = w.Clerk || function () { w.__clerk_q.push(arguments) };
+    })(window, document);
 
-        Clerk('config', {
-            key: publicKey,
-            formatters: {
-                currency_converter: function (price) {
-                    var converted_price = (price * Shopify.currency.rate);
-                    return (converted_price).toString();
-                }
-            },
-            globals: {
-                currency_iso: "{{ cart.currency.iso_code }}",
-                currency_symbol: "{{ cart.currency.symbol }}"
+    Clerk('config', {
+        key: publicKey,
+        formatters: {
+            currency_converter: function (price) {
+                var converted_price = (price * Shopify.currency.rate);
+                return (converted_price).toString();
             }
-        });
+        },
+        globals: {
+            currency_iso: "{{ cart.currency.iso_code }}",
+            currency_symbol: "{{ cart.currency.symbol }}"
+        }
     });
 </script>
 <!-- End of Clerk.io E-commerce Personalisation tool - www.clerk.io Tax-{{ tax_line.rate_percentage }} -->
