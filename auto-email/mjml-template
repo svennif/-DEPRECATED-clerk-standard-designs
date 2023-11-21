@@ -81,7 +81,7 @@
 
 {% assign __design__section_bg_color_white = '#ffffff' %}
 {% assign __design__body_bg_color = '#eceff4' %}
-{% assign __design__active_color = '#2f323b' %}
+{% assign __design__active_color = '#333333' %}
 {% assign __design__active_alt_color = '#fcfcfc' %}
 {% assign __design__text_color_white = '#ffffff' %}
 {% assign __design__text_alt_color_black = '#000000' %}
@@ -138,13 +138,13 @@
       background-color="{{ __design__body_bg_color }}"
       color="{{ __design__body_bg_color }}"
       font-family="{{ __design__font_fam_title }}">
+      {% if input_shop_logo_image_url != 0 %}
       <mj-section
         background-color="{{ __design__section_bg_color_white }}"
         background-repeat="no-repeat"
         text-align="center"
         vertical-align="top">
         <mj-column>
-        {% if input_shop_logo_image_url != 0 %}
           <mj-image
             align="center"
             border="none"
@@ -155,10 +155,9 @@
             target="_blank"
             title="{{ __design__shop_title }}"
             ></mj-image>
-        {% endif %}
         </mj-column>
-
       </mj-section>
+      {% endif %}
       <mj-section background-color="{{ __design__active_color }}" padding="{{ __design__pad_0 }}">
         <mj-group>
           <mj-column>
@@ -174,16 +173,17 @@
         </mj-group>
       </mj-section>
       
+      {% if input_banner_image != 0 %}
       <mj-section
           background-color="{{ __design__section_bg_color_white }}"
           padding="{{ __design__pad_0 }}">
           <mj-column>
-          {% if input_banner_image != 0 %}
             <mj-image align="center" src="{{ input_banner_image }}" href="{{ __design__shop_domain }}"> </mj-image>
-          {% endif %}
           </mj-column>
       </mj-section>
+      {% endif %}
       
+      {% if input_headline or input_text %}
       <mj-section
         background-color="{{ __design__section_bg_color_white }}"
         background-repeat="no-repeat"
@@ -223,6 +223,7 @@
           {% endif %}
         </mj-column>
       </mj-section>
+      {% endif %}
       {% for product in products %}
         {% assign loop_index = loop.index0 | int %}
         {% assign end_row_index = loop_index + __design__one %}
@@ -282,15 +283,15 @@
         {% endif %}
       {% endfor %}
 
+      {% if input_bottom_banner_image != 0 %}
       <mj-section
           background-color="{{ __design__section_bg_color_white }}"
           padding="{{ __design__pad_0 }}">
           <mj-column>
-          {% if input_bottom_banner_image != 0 %}
             <mj-image align="center" src="{{ input_bottom_banner_image }}" href="{{ __design__shop_domain }}"> </mj-image>
-          {% endif %}
           </mj-column>
       </mj-section>
+      {% endif %}
 
       <mj-section
         background-color="{{ __design__active_color }}"
