@@ -294,7 +294,7 @@
       {% endif %}
 
       <mj-section
-        background-color="{{ __design__active_color }}"
+        background-color="{{ __design__section_bg_color_white }}"
         padding-bottom="{{ __design__pad_0 }}"
         font-family="{{ __design__font_fam_section }}"
         padding-top="{{ __design__pad_0 }}">
