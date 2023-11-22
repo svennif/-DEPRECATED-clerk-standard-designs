@@ -186,13 +186,14 @@
 }
 
 .clerk-instant-search-category {
-    padding: 5px;
+    padding: 8px;
     margin: 5px;
     width: auto;
     display: inline-block;
-    border: 1px solid #617948;
-    border-radius: 2px;
-    font-weight: bold;
+    border: 1px solid #f3f3f3;
+    border-radius: 10px;
+    font-weight: normal;
+    background: #F1F1F1;
 }
 
 .clerk-instant-search-category a {

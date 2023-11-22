@@ -229,23 +229,19 @@ clerk-instant-search-more-results-wrapper{
 }
 
 .clerk-instant-search-category {
-    padding: 5px;
+    padding: 8px;
     margin: 5px;
     width: auto;
     display: inline-block;
-    color: var(--clerk-font-color);
-    background-color: rgb(249, 249, 250);
+    border: 1px solid #f3f3f3;
     border-radius: 10px;
-    font-weight: bold;
+    font-weight: normal;
+    background: #F1F1F1;
 }
 
 .clerk-instant-search-category > a > {
     color: var(--clerk-font-color);
     text-decoration: none;
-}
-
-.clerk-highlight {
-    background-color: #fafa66;
 }
 
 /********************************************************
