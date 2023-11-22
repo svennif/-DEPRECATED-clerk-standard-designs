@@ -3,15 +3,14 @@
 }
 
 .clerk-col-1 {
-    flex: 1;
 }
 
 .clerk-col-2 {
-    flex: 2;
+    min-width:15em;
 }
 
 .clerk-instant-search {
-    overflow-y: scroll;
+    overflow-y: auto;
     padding: 20px;
     height: calc(100vh - 7em);
     width: calc(100vw - 1em);
@@ -19,7 +18,6 @@
     background-color: #fff;
     border: 1px solid #eee;
     border-top: 0px;
-    border-radius: 5px 5px 10px 10px;
     box-shadow: 0 1em 2em 1em rgba(0, 0, 0, 0.2);
 }
 
@@ -37,9 +35,14 @@
 *
 ********************************************************/
 
+.clerk-instant-search-product{
+    text-align: center;
+}
+
 .clerk-instant-search-product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap:10px;
 }
 
 /******************************************************
@@ -56,8 +59,8 @@
 
 .clerk-instant-search-product-image {
     display: inline-block;
-    width: 400px;
-    height: 480px;
+    width: 10em;
+    height: 10em;
     margin-right: 1rem;
     margin-bottom: 1rem;
     object-fit: cover;
@@ -91,7 +94,7 @@
 ********************************************************/
 
 .clerk-instant-search-product-name {
-    font-family: Manrope;
+    font-family: inherit;
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 5px;
@@ -113,6 +116,10 @@
 *
 ********************************************************/
 
+.clerk-instant-search-price-wrapper{
+    align-self: center;
+}
+
 .clerk-instant-search-product-list-price {
     color: #666666;
     font-weight: 600;
@@ -122,7 +129,7 @@
 
 .clerk-instant-search-product-price {
     border-bottom: 2px solid #D3CDC3;
-    font-family: 'Manrope';
+    font-family: inherit;
     font-size: 16px;
     color: #2f314c;
     font-weight: 700;

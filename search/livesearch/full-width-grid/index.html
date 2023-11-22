@@ -12,14 +12,14 @@
             <div class="clerk-instant-search-products">
                 <div class="clerk-instant-search-title">Products</div>
                 <div class="clerk-instant-search-product-grid">
-                    {% for item in products %} {% assign currency_symbol %}
+                    {% for item in products %} {% assign currency_symbol == '€' %}
                     <div class="clerk-instant-search-product clerk-instant-search-key-selectable">
                         <!-- PRODUCT INFORMATION -->
                         <a href="{{item.url}}" class="clerk-instant-search-link">
-                            <div class="clerk-instant-search-product-image" style="background-image: url('{{ item.image }}');"></div>
+                            <img class="clerk-instant-search-product-image" src="{{ item.image }}" alt="{{ item.name }}"/> 
                             <div class="clerk-instant-search-product-info">
                                 <div class="clerk-instant-search-product-name">{{ item.name | highlight query }}</div>
-                                {% if item.variant_prices.first < item.variant_prices.last %} {% if item.price < item.list_price %}
+                                {% if item.price < item.list_price %}
                                 <div class="clerk-instant-search-price-wrapper">
                                     <div class="clerk-instant-search-product-list-price">{{ item.list_price | money }} {{ currency_symbol }}</div>
                                     <div class="clerk-instant-search-product-price">{{ item.price | money }} {{ currency_symbol }}</div>
@@ -28,16 +28,7 @@
                                 <div class="clerk-instant-search-price-wrapper">
                                     <div class="clerk-instant-search-product-price">{{ item.price | money }} {{ currency_symbol }}</div>
                                 </div>
-                                {% endif %} {% else %} {% if item.price < item.list_price %}
-                                <div class="clerk-instant-search-price-wrapper">
-                                    <div class="clerk-instant-search-product-list-price">{{ item.list_price | money }} {{ currency_symbol }}</div>
-                                    <div class="clerk-instant-search-product-price">{{ item.price | money }} {{ currency_symbol }}</div>
-                                </div>
-                                {% else %}
-                                <div class="clerk-instant-search-price-wrapper">
-                                    <div class="clerk-instant-search-product-price">{{ item.price | money }} {{ currency_symbol }}</div>
-                                </div>
-                                {% endif %} {% endif %}
+                                {% endif %} 
                             </div>
                         </a>
                     </div>
@@ -48,17 +39,20 @@
                 {% endif %}
             </div>
         </div>
-        {% endif %} {% if (suggestions.length + categories.length) > 0 %}
+        {% endif %} 
+        {% if (suggestions.length + categories.length) > 0 %}
         <div class="clerk-instant-search-col clerk-col-2">
             <div class="clerk-instant-search-suggestions">
                 {% if suggestions.length > 0 %}
                 <div class="clerk_instant_search_suggestions_wrap">
                     <div class="clerk-instant-search-title">Suggestions</div>
-                    {% for suggestion in suggestions %} {% if suggestion != query %}
+                    {% for suggestion in suggestions %} 
+                    {% if suggestion != query %}
                     <div class="clerk-instant-search-category clerk-instant-search-key-selectable">
                         <a class="clerk_instant_search_link" href="/module/clerk/search?search_query={{suggestion}}">{{ suggestion | highlight query }}</a>
                     </div>
-                    {% endif %} {% endfor %}
+                    {% endif %} 
+                    {% endfor %}
                 </div>
                 {% endif %}
             </div>
@@ -71,13 +65,14 @@
                 </div>
                 {% endfor %}
             </div>
-            {% endif %} {% if pages.length > 0 %}
+            {% endif %} 
+            {% if pages.length > 0 %}
             <div class="clerk-instant-search-pages">
                 <div class="clerk-instant-search-title">Pages</div>
                 {% for page in pages %}
                 <div class="clerk-instant-search-category clerk-instant-search-key-selectable">
                     <a href="{{ page.url }}">
-                        <div class="name">{{ page.title | highlight query 'bold' true }}</div>
+                        <div class="name">{{ page.title | highlight query }}</div>
                     </a>
                 </div>
                 {% endfor %}
