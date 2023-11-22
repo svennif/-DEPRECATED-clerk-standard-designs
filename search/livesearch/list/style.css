@@ -200,6 +200,12 @@
     color: black;
 }
 
+.clerk-highlight {
+    /* Using important to overwrite Clerk.js */
+    font-weight: 600 !important;
+    background-color: transparent !important;
+}
+
 /* Pages */
 .clerk-instant-search-pages {
     margin-bottom: 1em;

@@ -244,6 +244,12 @@ clerk-instant-search-more-results-wrapper{
     text-decoration: none;
 }
 
+.clerk-highlight {
+    /* Using important to overwrite Clerk.js */
+    font-weight: 600 !important;
+    background-color: transparent !important;
+}
+
 /********************************************************
 
     Pages
