@@ -384,13 +384,13 @@ input.clerk-facet-show-more:checked + .clerk-facet-group-facets + label.clerk-fa
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px) {
     .clerk-facet-group {
         flex: 0 0 100%;
         max-width: 100%;
     }
 }
-@media screen and (min-width: 601px) and (max-width: 1000px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
     .clerk-facet-group {
         flex: 0 0 100%;
         max-width: 100%;
