@@ -325,7 +325,7 @@ input.clerk-facet-show-more:checked + .clerk-facet-group-facets + label.clerk-fa
         max-width: 100%;
         padding: 0;
         border: 0;
-        margin-bottom: 0;
+        margin-bottom: 1em;
         margin-left: 0;
     }
 
