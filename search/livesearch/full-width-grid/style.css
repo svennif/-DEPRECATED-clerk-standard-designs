@@ -147,14 +147,14 @@
 *
 ********************************************************/
 
-.clerk-view-more-results-button {
+.clerk-instant-search-more-results {
     display: flex;
     justify-content: center;
     color: #6d6d6d;
     text-decoration: underline;
 }
 
-.clerk-view-more-results-button:hover {
+.clerk-instant-search-more-results:hover {
     text-decoration: none;
     color: #6d6d6d;
 }
