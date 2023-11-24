@@ -1,5 +1,11 @@
 <div class="clerk-instant-search">
     <div class="clerk-instant-search-grid">
+        {% if products.length == 0 and categories.length == 0 and  %}
+        <!-- NO RESULTS FALLBACK -->
+        <div class="clerk-instant-search-no-results">
+            Ingen resultater for : <b>{{ query }}</b>
+        </div>
+        {% endif %} 
         {% if products.length > 0 %}
         <div class="clerk-instant-search-col clerk-col-1">
             <div class="clerk-instant-search-products">
@@ -32,7 +38,7 @@
             {% if suggestions.length > 0 %}
             <div class="clerk-instant-search-suggestions">
                 <div class="clerk_instant_search_suggestions_wrap">
-                    <div class="clerk-instant-search-title">Suggestions</div>
+                    <div class="clerk-instant-search-title">Forslag</div>
                     {% for suggestion in suggestions %}
                     <div class="clerk-instant-search-category clerk-instant-search-key-selectable">
                         <a class="clerk_instant_search_link" href="/module/clerk/search?search_query={{suggestion}}">{{suggestion | highlight query }}</a>
