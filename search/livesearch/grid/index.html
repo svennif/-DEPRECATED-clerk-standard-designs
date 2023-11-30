@@ -12,7 +12,7 @@
             <div class="clerk-instant-search-products">
                 <div class="clerk-instant-search-title">Products</div>
                 <div class="clerk-instant-search-product-grid">
-                    {% for item in products %} {% assign currency_symbol = '' %}
+                    {% for item in products %} {% assign currency_symbol = '€' %}
                     <div class="clerk-instant-search-product clerk-instant-search-key-selectable">
                         <!-- PRODUCT INFORMATION -->
                         <a href="{{item.url}}" class="clerk-instant-search-link">
@@ -21,10 +21,10 @@
                                 <div class="clerk-instant-search-product-brand">{{item.brand}}</div>
                                 <div class="clerk-instant-search-product-name">{{ item.name | highlight query }}</div>
                                 {% if item.price < item.list_price %}
-                                <div class="clerk-instant-search-product-price">{{ currency_symbol }} {{ item.price | money }}</div>
-                                <div class="clerk-instant-search-product-list-price">{{ currency_symbol }} {{ item.list_price | money }}</div>
+                                <div class="clerk-instant-search-product-price">{{ currency_symbol }} {{ item.price | money_eu }}</div>
+                                <div class="clerk-instant-search-product-list-price">{{ currency_symbol }} {{ item.list_price | money_eu }}</div>
                                 {% else %}
-                                <div class="clerk-instant-search-product-price">{{ currency_symbol }} {{ item.price | money }}</div>
+                                <div class="clerk-instant-search-product-price">{{ currency_symbol }} {{ item.price | money_eu }}</div>
                                 {% endif %}
                             </div>
                         </a>
