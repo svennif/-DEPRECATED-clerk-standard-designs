@@ -12,7 +12,7 @@
         </div>
     </div>
     {% assign fcount = facets.length %} {% assign index = 0 %} {% for facet_group in facets %}
-    <div class="clerk-facet-group clerk-facet-{{ facet_group.group }} tag">
+    <div class="clerk-facet-group clerk-facet-{{ facet_group.group }} clerk-tag">
         <div class="clerk_facet_title" onclick="facet_toggle(this)">{{ facet_group.title }}</div>
         <div class="facet_wrap">
             {% if facet_group.type == "range" %}
@@ -48,7 +48,7 @@
             actual_facet = document.querySelectorAll(".actual_facet");
             actual_facet.forEach((af) => {
                 if (mark_facets) {
-                    af.classList.toggle("tag");
+                    af.classList.toggle("clerk-tag");
                 }
                 let c = 0,
                     x = 0,
@@ -91,7 +91,7 @@
             el = event.target;
             actual_facet = document.querySelectorAll(".actual_facet");
             actual_facet.forEach((facet) => {
-                facet.classList.toggle("tag");
+                facet.classList.toggle("clerk-tag");
             });
             el.textContent = el.textContent.indexOf(toggle_ui_msg["show"]) > -1 ? toggle_ui_msg["hide"] + group_count : toggle_ui_msg["show"] + group_count;
             window.tagged = window.tagged == undefined ? 1 : window.tagged * -1;
