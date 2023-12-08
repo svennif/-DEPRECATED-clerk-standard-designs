@@ -7,7 +7,8 @@
             <b>{{ query }}</b>
             ... try a simpler search!
         </div>
-        {% endif %} {% if products.length > 0 %}
+        {% endif %} 
+        {% if products.length > 0 %}
         <div class="clerk-instant-search-col clerk-col-1">
             <div class="clerk-instant-search-products">
                 <div class="clerk-instant-search-title">Products</div>
@@ -38,32 +39,34 @@
             </div>
             {% endif %}
         </div>
-        {% endif %} {% if (suggestions.length + categories.length) > 0 %}
+        {% endif %} 
+        {% if (suggestions.length + categories.length) > 0 %}
         <div class="clerk-instant-search-col clerk-col-2">
             <div class="clerk-instant-search-suggestions">
                 {% if suggestions.length > 0 %}
+                <div class="clerk-instant-search-title">Suggestions</div>
                 <div class="clerk_instant_search_suggestions_wrap">
-                    <div class="clerk-instant-search-title">Suggestions</div>
-                    {% for suggestion in suggestions %} {% if suggestion != query %}
+                    {% for suggestion in suggestions %} 
                     <div class="clerk-instant-search-category clerk-instant-search-key-selectable">
                         <a class="clerk_instant_search_link" href="/module/clerk/search?search_query={{suggestion}}">{{ suggestion | highlight query }}</a>
                     </div>
-                    {% endif %} {% endfor %}
+                    {% endfor %}
                 </div>
                 {% endif %}
             </div>
             {% if categories.length > 0 %}
+            <div class="clerk-instant-search-title">Categories</div>
             <div class="clerk-instant-search-categories">
-                <div class="clerk-instant-search-title">Categories</div>
                 {% for category in categories %}
                 <div class="clerk-instant-search-category clerk-instant-search-key-selectable">
                     <a href="{{category.url}}" class="clerk_instant_search_link">{{ category.name | highlight query }}</a>
                 </div>
                 {% endfor %}
             </div>
-            {% endif %} {% if pages.length > 0 %}
+            {% endif %} 
+            {% if pages.length > 0 %}
+            <div class="clerk-instant-search-title">Related Content</div>
             <div class="clerk-instant-search-pages">
-                <div class="clerk-instant-search-title">Related Content</div>
                 {% for page in pages %}
                 <div class="clerk-instant-search-category clerk-instant-search-key-selectable">
                     <a href="{{ page.url }}" class="clerk_instant_search_link">{{ page.title | highlight query }}</a>
