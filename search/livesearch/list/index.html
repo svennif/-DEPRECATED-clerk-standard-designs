@@ -12,8 +12,8 @@
                 <div class="clerk-instant-search-title">Produkter</div>
                 {% for item in products %} {% assign currency_symbol = "€" %}
                 <div class="clerk-instant-search-product clerk-instant-search-key-selectable">
-                    <a href="{{item.url}}" class="clerk-instant-search-link">
-                        <div class="clerk-instant-search-product-image" style="background-image: url('{{ item.image }}');"></div>
+                    <a href="{{ item.url }}" class="clerk-instant-search-link">
+                        <img class="clerk-instant-search-product-image" src="{{ item.image }}" alt="{{ item.name }}"/>
                         <div class="clerk-instant-search-info-wrap">
                             <div class="clerk-instant-search-product-brand">{{item.brand}}</div>
                             <div class="clerk-instant-search-product-name">{{ item.name | highlight query }}</div>
