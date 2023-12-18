@@ -1,19 +1,5 @@
-<!-- 
-Useful for when a side-cart does not get re-rendered, but becomes in\visible.
-
-At the time of writing can be seen live at **“23.01.30 - Clerk.io STOY 2K21 2.0”  @** Stoy.com
-
-When implementing see what classes are being changed, as the script observes attribute changes for <targetNode>.
-Transitioning: call cart.js (shopify cart endpoint) and check if the products have changed since last time, If they have call Clerk() with the new products
-
-Open: make the slider visible with “opacity =1”
-Close: make the slider invisible with “opacity=0”
-
-Open/Close is done as the slider would flicker due to the re-render
--->
-
 <!-- start Clerk.io E-commerce Personalisation tool - www.clerk.io -->
-<span class="clerk_m" style="position: absolute; transform: translate(-280px, 0px); min-height: 290px; opacity: 0" id="cart-others-also-bought" data-template="@cart-others-also-bought-2" data-products="[{% for line_item in cart.items %}{% if forloop.index0 > 0 %}, {% endif %}{{ line_item.product.id }}{% endfor %}]"></span>
+<span class="clerk_m cart-others-also-bought" style="position: absolute; transform: translate(-280px, 0px); min-height: 290px; opacity: 0" id="" data-template="@cart-others-also-bought" data-products="[{% for line_item in cart.items %}{% if forloop.index0 > 0 %}, {% endif %}{{ line_item.product.id }}{% endfor %}]"></span>
 <style>
     #cart-others-also-bought {
         transition: opacity 0.5s ease-in-out;
@@ -27,7 +13,7 @@ Open/Close is done as the slider would flicker due to the re-render
 
     let cartFetched = false;
     let previousitemsID = [];
-    const clerk_element = document.getElementById("cart-others-also-bought");
+    const clerk_element = document.querySelector(".cart-others-also-bought");
 
     // Function to fetch cart data
     async function fetchCartData() {
