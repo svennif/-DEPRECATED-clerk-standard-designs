@@ -1,0 +1,33 @@
+.clerk-slider-nav{
+    background-color: white!important;
+    background-image: none!important;
+    width: 37px!important;
+    height: 37px!important;
+    border: 1px solid #ccc;
+}
+
+.clerk-slider-nav-next:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.clerk-slider-nav-prev:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: translate(-50%, -50%) rotate(135deg);
+    -webkit-transform: translate(-50%, -50%) rotate(135deg);
+}
