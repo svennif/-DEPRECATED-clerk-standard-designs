@@ -58,7 +58,6 @@
     font-size: 1em;
     font-weight: bold;
     border-bottom: 1px dotted #000000;
-    font-family: "Roboto", sans-serif;
 }
 
 /* Products */
@@ -106,7 +105,6 @@
     padding: 0px 5px 0px 0px;
     overflow: hidden;
     font-weight: 700;
-    font-family: "Roboto", sans-serif;
     color: #222222;
 }
 
@@ -114,7 +112,6 @@
     font-size: 0.8em;
     color: #964a44;
     font-weight: bold;
-    font-family: "Roboto", sans-serif;
 }
 
 .clerk-instant-search-product-list-price {
