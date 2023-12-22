@@ -1,67 +1,25 @@
-.clerk-wrapper {
-    padding: 0;
-    background-color: transparent;
-    border-radius: 0;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: auto;
-}
-
-.clerk-product-wrapper:hover {
-    text-decoration: none;
-}
-
 .clerk-headline-wrapper {
     display: flex;
-    display: -webkit-box;
-    -webkit-box-pack: center;
     justify-content: center;
     align-items: center;
-    position: relative;
-    width: auto;
-    height: auto;
-    margin: 0px 0px 0px 0px;
-    box-sizing: border-box;
-    border-radius: 0px;
-    padding: 0px 0px 0px 0px;
-    word-break: break-word;
-    text-decoration: none;
-}
-
-.clerk-headline {
-    font-size: 2em;
-}
-
-.clerk-slider {
-    overflow: visible;
-    white-space: nowrap;
-    position: relative;
 }
 
 /* 
 * This will determine  how many products are being shown in the slider
 */
-.clerk-slider-content {
-    display: inline-block;
+.clerk-slider-item {
     width: calc(25% - 0px);
 }
 @media screen and (max-width: 768px) {
-    .clerk-slider-content {
+    .clerk-slider-item {
         width: calc(50%);
     }
 }
 @media screen and (max-width: 480px) {
-    .clerk-slider-content {
+    .clerk-slider-item {
         width: calc(50%);
     }
 }
-
-/*********************************************
-*
-* CUSTOM NAV BUTTONS HERE  
-*
-*********************************************/
 
 /*********************************************
 *
