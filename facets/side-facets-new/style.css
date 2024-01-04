@@ -1,0 +1,84 @@
+.clerk_facets {
+	max-width: 20%;
+}
+
+.clerk_facets_container {
+    padding: 0 1rem;
+}
+
+.clerk_facets_wrapper {
+    border-bottom: 1px solid #d1d5db;
+    padding: 1rem 0;
+}
+
+.clerk_facets_toggle {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.75rem 0;
+	border: none;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    background-color: transparent;
+}
+
+.clerk_facets_toggle:hover {
+	color: #6b7280;
+}
+
+.clerk_facets_toggle_headline {
+	color: #111827;
+    line-height: 1.25rem;
+    font-size: .875rem;
+}
+
+.clerk_facets_toggle_icons_wrapper {
+	display: flex;
+	align-items: center;
+	margin-left: 1.5rem;
+}
+
+.clerk_facets_toggle_icons {
+	height: 1.5rem;
+	width: 1.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.clerk_facet_option,
+.clerk_facet_label {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+}
+
+.clerk_facet_option {
+    padding-top: .4rem;
+}
+
+.clerk_facet_checkbox {
+    height: 1rem;
+    width: 1rem;
+    border: 1px solid #6b7280;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.clerk_facet_option_name {
+    margin-left: 1rem;
+    color: #111827;
+    font-size: .875rem;
+    line-height: 1.25rem;
+
+}
+
+.clerk_facet_option_count {
+    margin-left: auto;
+    margin-right: .6rem;
+    color: #6b7280;
+    font-size: .9rem;
+    line-height: 1rem;
+}
