@@ -24,7 +24,6 @@
 
 .clerk-facet-group {
     margin-bottom: 0px;
-    cursor: pointer;
     font-size: 1em;
     color: #e4e4e4;
     -webkit-user-select: none;
@@ -260,7 +259,6 @@ input.clerk-facet-show-more:checked + .clerk-facet-group-facets + label.clerk-fa
 
 .clerk_absolute {
     max-width: 100%;
-    padding: 10px;
     border: 1px solid #000;
     margin-bottom: 23.5px;
 }
