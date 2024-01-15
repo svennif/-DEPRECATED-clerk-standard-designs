@@ -2,8 +2,9 @@
     left: 0 !important;
 }
 
+/* 
 .clerk-col-1 {
-}
+} */
 
 .clerk-col-2 {
     min-width:15em;
@@ -177,12 +178,28 @@
     width: calc(100% - 20px);
 }
 
-.clerk-instant-search-category > a {
-    color: #000;
-    margin: 1px 0;
+/* Categories */
+.clerk-instant-search-categories {
+  margin-bottom: 1em;
 }
 
-.clerk-instant-search-category > a:hover {
-    text-decoration: underline;
-    color: #000;
+.clerk-instant-search-category {
+  padding: 8px;
+  margin: 5px;
+  width: auto;
+  display: inline-block;
+  border: 1px solid #f3f3f3;
+  border-radius: 10px;
+  font-weight: normal;
+  background: #F1F1F1;
+}
+
+.clerk-instant-search-category a {
+  color: black;
+}
+
+.clerk-highlight {
+  /* Using important to overwrite Clerk.js */
+  font-weight: 600 !important;
+  background-color: transparent !important;
 }
