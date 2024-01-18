@@ -1,4 +1,13 @@
 <div class="clerk_facets">
+	<div class="clerk_display_toggle" onclick="clerk_toggle_facets()">
+		Filtri
+		<?xml version="1.0" encoding="UTF-8"?>
+		<svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="35" height="18">
+			<path d="M1,4.75H3.736a3.728,3.728,0,0,0,7.195,0H23a1,1,0,0,0,0-2H10.931a3.728,3.728,0,0,0-7.195,0H1a1,1,0,0,0,0,2ZM7.333,2a1.75,1.75,0,1,1-1.75,1.75A1.752,1.752,0,0,1,7.333,2Z" />
+			<path d="M23,11H20.264a3.727,3.727,0,0,0-7.194,0H1a1,1,0,0,0,0,2H13.07a3.727,3.727,0,0,0,7.194,0H23a1,1,0,0,0,0-2Zm-6.333,2.75A1.75,1.75,0,1,1,18.417,12,1.752,1.752,0,0,1,16.667,13.75Z" />
+			<path d="M23,19.25H10.931a3.728,3.728,0,0,0-7.195,0H1a1,1,0,0,0,0,2H3.736a3.728,3.728,0,0,0,7.195,0H23a1,1,0,0,0,0-2ZM7.333,22a1.75,1.75,0,1,1,1.75-1.75A1.753,1.753,0,0,1,7.333,22Z" />
+		</svg>
+	</div>
 	<div class="clerk_facets_container">
 		{% for facet_group in facets %}
 		<div class="clerk_facets_wrapper">
@@ -19,7 +28,7 @@
 			</div>
 			<div class="clerk_facet_option_wrapper hidden">
 				{% if facet_group.type == "range" %}
-				<div class="clerk_facet_option_range"></div>
+				<div class="clerk_facet_option_range clerk-range" data-group="{{ facet_group.group}}" data-min="{{ facet_group.min }}" data-max="{{ facet_group.max }}" data-start="{{ facet_group.start }}" data-end="{{ facet_group.end }}" data-step="auto"></div>
 				{% endif %} {% for facet in facet_group.facets %}
 				<div class="clerk-facet clerk_facet_option {% if facet.selected %} clerk-facet-selected {% endif %}" data-facet="{{ facet_group.group }}" data-value="{{ facet.value }}" data-min="{{ facet.min }}" data-max="{{ facet.max }}">
 					<div class="clerk_facet_option_name">{{ facet.name }}</div>
@@ -44,4 +53,14 @@
 			clerk_facet_option_wrappers[index].classList.toggle('hidden')
 		})
 	})
+
+	function clerk_toggle_facets() {
+		let clerk_facets_container = document.querySelector('.clerk_facets_container')
+
+		if (clerk_facets_container.style.display == 'block') {
+			clerk_facets_container.style.display = 'none'
+		} else {
+			clerk_facets_container.style.display = 'block'
+		}
+	}
 </script>

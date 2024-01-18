@@ -66,20 +66,39 @@
 	padding-top: 0.4rem;
 }
 
-.clerk_facet_checkbox {
-	height: 1rem;
-	width: 1rem;
-	border: 1px solid #6b7280;
-	border-radius: 2px;
-	cursor: pointer;
+.clerk-range-selected-range {
+	background-color: #111827 !important;
 }
 
 .clerk_facet_option_name {
-	margin-left: 1rem;
-	margin-right: 0.5rem;
-	color: #111827;
+	overflow: hidden;
 	font-size: 0.875rem;
-	line-height: 1.25rem;
+	text-overflow: ellipsis;
+	width: 89%;
+	color: #111827;
+	text-align: start;
+	padding-left: 8px;
+}
+
+.clerk_facet_option_name:before {
+	position: relative;
+	top: 0.1em;
+	display: inline-block;
+	content: '';
+	width: 15px;
+	height: 15px;
+	margin: 0 0.5em 0 0;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 0px;
+	transition: all 0.1s ease-in-out;
+	line-height: 15px;
+	text-align: center;
+}
+
+.clerk-facet-selected .clerk_facet_option_name:before {
+	border-color: #000;
+	content: '✔';
+	vertical-align: middle;
 }
 
 .clerk_facet_option_count {
@@ -103,11 +122,14 @@
 		margin: 1rem;
 	}
 
-	.clerk_display_toggle {
-		display: flex;
+	.clerk_facets_container {
+		display: none;
 	}
 
-	.clerk_facets {
-		display: none;
+	.clerk_display_toggle {
+		display: flex;
+		margin: 1rem;
+		align-items: center;
+		cursor: pointer;
 	}
 }
