@@ -113,7 +113,7 @@
 {% assign __design__shop_rel_url_blog = '/blog' %}
 {% assign __design__shop_rel_url_store = '/store' %}
 
-{% assign api_key = '' %}
+{% assign __design__api_key = '' %}
 {% assign __design__social_facebook_url = '' %}
 {% assign __design__social_youtube_url = '' %}
 {% assign __design__social_instagram_url = '' %}
