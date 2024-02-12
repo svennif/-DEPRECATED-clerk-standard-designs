@@ -127,7 +127,6 @@
 {% if input_headline == null %}{% assign input_headline = 'Example Headline' %}{% endif %}
 {% if input_text_long == null %}{% assign input_text_long = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium magna et urna fringilla convallis. Nullam non urna scelerisque, posuere diam ut, pretium ante. Donec elementum risus et nibh pellentesque accumsan. ' %}{% endif %}
 {% if input_bottom_banner_image == null %}{% assign input_bottom_banner_image = 'https://assets-global.website-files.com/63357df7224a8a49353f3636/635560bbe41031b0fd7bcd10_lifecycle.svg' %}{% endif %}
-{% if input_unsubscribe == null %}{% assign input_unsubscribe = 'https://api.clerk.io/v2/subscriber/unsubscribe?key=' ~ api_key ~ '&email=' ~ email ~ '&redirect=true' %}{% endif %}
 
 {#
 -----------------------------------------------------
