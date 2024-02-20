@@ -19,11 +19,11 @@
                         <div class="clerk-sidebar-price-wrapper">
                             {% if item.on_sale == true %}
                             <div class="clerk-sidebar-normal-price">
-                                <span class="clerk-price">{{ currency_symbol | replace "." "" }} {{ item.list_price | currency_converter | money 2 "." "." }}</span>
+                                <span class="clerk-price">{{ currency_symbol }} {{ item.list_price | currency_converter | money_eu }}</span>
                             </div>
                             {% endif %}
                             <div class="clerk-sidebar-on_sale-price">
-                                <span class="clerk-price">{{ currency_symbol | replace "." "" }} {{ item.price | currency_converter | money 2 "." "." }}</span>
+                                <span class="clerk-price">{{ currency_symbol }} {{ item.price | currency_converter | money_eu }}</span>
                             </div>
                         </div>
                     </div>
