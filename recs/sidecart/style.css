@@ -1,155 +1,154 @@
 .clerk-sidebar-title {
-    font-style: normal;
-    color: #303030;
-    padding: 24px 0px 11px 0px;
-    border-bottom: 1px #c9c9c9;
-    margin: 0px 30px;
-    font-family: inherit;
-    margin-bottom: 10px;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 0 auto;
-    line-height: normal;
-    font-size: 1.41176em;
-    font-weight: 400;
-    letter-spacing: 1px;
+	font-style: normal;
+	color: #303030;
+	padding: 24px 0px 11px 0px;
+	border-bottom: 1px #c9c9c9;
+	margin: 0px 30px;
+	font-family: inherit;
+	margin-bottom: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 0 auto;
+	line-height: normal;
+	font-size: 1.41176em;
+	font-weight: 400;
+	letter-spacing: 1px;
 }
 
 .clerk-sidebar {
-    overflow: hidden;
-    background-color: #f9f9f9;
-    border-top: 0px;
-    border: 1px solid lightgray;
-    border-top: none;
-    border-bottom: none;
-    height: 100vh;
+	overflow: hidden;
+	background-color: #f9f9f9;
+	border-top: 0px;
+	border: 1px solid lightgray;
+	border-top: none;
+	border-bottom: none;
+	height: 100vh;
 }
 
 .clerk-sidebar-alternate-query {
-    padding: 1em;
+	padding: 1em;
 }
-
 
 /* Grid layout */
 .clerk-sidebar-grid {
-    display: flex;
+	display: flex;
 }
 
 .clerk-sidebar-col:first-child {
-    flex: 2;
+	flex: 2;
 }
 
 .clerk-sidebar-col:last-child {
-    flex: 1;
+	flex: 1;
 }
 
 /* width */
 .clerk-sidebar-products {
-    scrollbar-width: none;
-    scrollbar-color: #222 transparent;
+	scrollbar-width: none;
+	scrollbar-color: #222 transparent;
 }
 
 /* width */
 .clerk-sidebar-products::-webkit-scrollbar {
-    width: 0px;
+	width: 0px;
 }
 
 /* Track */
 .clerk-sidebar-products::-webkit-scrollbar-track {
-    background: transparent;
+	background: transparent;
 }
 
 /* Handle */
 .clerk-sidebar-products::-webkit-scrollbar-thumb {
-    background: #222;
-    opacity: 0.5;
+	background: #222;
+	opacity: 0.5;
 }
 
 /* Handle on hover */
 .clerk-sidebar-products::-webkit-scrollbar-thumb:hover {
-    background: #222;
+	background: #222;
 }
 
 /* Products */
 .clerk-sidebar-products {
-    height: calc(100vh - 80px);
-    overflow-y: scroll;
+	height: calc(100vh - 80px);
+	overflow-y: scroll;
 }
 
 .clerk-sidebar-product {
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
+	display: flex;
+	flex-direction: column;
+	padding: 1em;
 }
 .clerk-sidebar-product > * {
-    flex: 1 1 auto;
+	flex: 1 1 auto;
 }
 .clerk-sidebar-product > *:first-child,
 .clerk-sidebar-product > *:last-child {
-    flex: 0 0 auto;
+	flex: 0 0 auto;
 }
 
 .clerk-sidebar-product-image {
-    width: 100%;
-    height: 100%;
-    padding: 0.5em;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: contain;
+	width: 100%;
+	height: 100%;
+	padding: 0.5em;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	object-fit: contain;
 }
 
 .clerk-sidebar-product-name {
-    font-weight: 400;
-    font-style: 11px;
-    color: #000000;
-    margin-bottom: 1rem;
-    font-family: inherit;
-    text-transform: normal;
-    letter-spacing: 0em;
-    font-size: 12px;
-    text-align: center;
-    max-width: 100%;
-    margin-top: 10px;
+	font-weight: 400;
+	font-style: 11px;
+	color: #000000;
+	margin-bottom: 1rem;
+	font-family: inherit;
+	text-transform: normal;
+	letter-spacing: 0em;
+	font-size: 12px;
+	text-align: center;
+	max-width: 100%;
+	margin-top: 10px;
 }
 
 /* MEDIA QUERY */
 @media screen and (max-width: 767px) {
-    .clerk-sidebar {
-        display: none;
-    }
-    .clerk-sidebar-title {
-        border-top: 1px solid lightgray;
-        padding: 10px;
-    }
-    .clerk-sidebar {
-        overflow: hidden;
-        width: auto;
-        background-color: white;
-        border-top: 0px;
-        border: 1px solid lightgray;
-        border-top: none;
-        border-bottom: none;
-        height: 405px;
-    }
-    .clerk-sidebar-grid {
-        display: flex;
-        flex-direction: row;
-    }
-    .clerk-sidebar-products {
-        height: 405px;
-        overflow-y: hidden;
-        display: flex;
-        flex-direction: row;
-        overflow-x: scroll;
-    }
-    .clerk-sidebar-product-image {
-        display: inline-block;
-        width: 160px;
-        height: 225px;
-        padding: 0.5em;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
+	.clerk-sidebar {
+		display: none;
+	}
+	.clerk-sidebar-title {
+		border-top: 1px solid lightgray;
+		padding: 10px;
+	}
+	.clerk-sidebar {
+		overflow: hidden;
+		width: auto;
+		background-color: white;
+		border-top: 0px;
+		border: 1px solid lightgray;
+		border-top: none;
+		border-bottom: none;
+		height: 405px;
+	}
+	.clerk-sidebar-grid {
+		display: flex;
+		flex-direction: row;
+	}
+	.clerk-sidebar-products {
+		height: 405px;
+		overflow-y: hidden;
+		display: flex;
+		flex-direction: row;
+		overflow-x: scroll;
+	}
+	.clerk-sidebar-product-image {
+		display: inline-block;
+		width: 160px;
+		height: 225px;
+		padding: 0.5em;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
 }
