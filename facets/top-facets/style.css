@@ -350,13 +350,3 @@ input.clerk-facet-show-more:checked + .clerk-facet-group-facets + label.clerk-fa
 	overflow-y: scroll;
 	overflow-y: overlay !important;
 }
-
-.tag:nth-child(n + 5) {
-	display: none;
-}
-
-@media screen and (max-width: 800px) {
-	.tag:nth-child(n + 2) {
-		display: none;
-	}
-}
