@@ -345,7 +345,7 @@
     padding-bottom="{{ __design__pad_10 }}"
     padding-top="{{ __design__pad_0 }}">
     <mj-column>
-      <mj-text align="center" color="{{ __design__text_alt_color_black }}" line-height="12px" font-size="{{ __design__font_size_12 }}" font-family="{{ __design__font_fam_section }}"> You can <a href="https://api.clerk.io/v2/subscriber/unsubscribe?key={{ api_key }}&email={{ email }}&redirect=true'"> unsubscribe from this list </a> </mj-text>
+      <mj-text align="center" color="{{ __design__text_alt_color_black }}" line-height="12px" font-size="{{ __design__font_size_12 }}" font-family="{{ __design__font_fam_section }}"> You can <a href="https://api.clerk.io/v2/subscriber/unsubscribe?key={{ __design__api_key }}&email={{ email }}&redirect=true'"> unsubscribe from this list </a> </mj-text>
     </mj-column>
   </mj-section>
 </mj-body>
