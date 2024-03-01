@@ -1,3 +1,4 @@
+
 {#
 -----------------------------------------------------
             TEMPLATE VARS
@@ -261,9 +262,9 @@
             font-family="{{ __design__font_fam_section }}">
             <p>{{ product.name }}</p>
             {%if product.price < product.list_price %}
-              <p style="text-decoration:line-through;color: {{ __design__listprice_color }};font-weight: {{ __design__font_weight_400 }};opacity: {{ __design__opacity_6 }};">{{ __design__currency_symbol }}{{ product.list_price | money | replace "." "," }}</p>
+            <span style="font-size: {{ __design__font_size_14 }}; text-decoration:line-through; margin-right: 8px;  color: {{ __design__listprice_color }};font-weight: {{ __design__font_weight_400 }};opacity: {{ __design__opacity_6 }};">{{ __design__currency_symbol }}{{ product.list_price | money_eu }}</span>
             {%endif%}
-              <p style="color: {{ __design__price_color }};">{{ __design__currency_symbol }}{{ product.price | money  | replace "." ","}}</p>
+            <span style="font-size: {{ __design__font_size_14 }}; color: {{ __design__price_color }};">{{ __design__currency_symbol }}{{ product.price | money_eu }}</span>
           </mj-text>
           <mj-button
             background-color="{{ __design__active_color }}"
