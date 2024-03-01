@@ -184,7 +184,7 @@
   </mj-section>
   {% endif %}
 
-  {% if input_headline or input_text %}
+  {% if input_headline or input_text_long %}
   <mj-section
     background-color="{{ __design__section_bg_color_white }}"
     background-repeat="no-repeat"
