@@ -1,24 +1,18 @@
-.clerk-headline-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 /* 
 * This will determine  how many products are being shown in the slider
 */
 .clerk-slider-item {
-    width: calc(25% - 0px);
+  width: calc(25% - 0px);
 }
 @media screen and (max-width: 768px) {
-    .clerk-slider-item {
-        width: calc(50%);
-    }
+  .clerk-slider-item {
+      width: calc(50%);
+  }
 }
 @media screen and (max-width: 480px) {
-    .clerk-slider-item {
-        width: calc(50%);
-    }
+  .clerk-slider-item {
+      width: calc(50%);
+  }
 }
 
 /*********************************************

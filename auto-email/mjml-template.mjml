@@ -1,0 +1,352 @@
+
+{#
+-----------------------------------------------------
+            TEMPLATE VARS
+-----------------------------------------------------
+        LAYOUT DISTRIBUTION START
+-----------------------------------------------------
+#}
+{% assign __design__items_per_row = 2 | int %}
+{% assign __design__one = 1 | int %}
+
+{#
+-----------------------------------------------------
+        LAYOUT DISTRIBUTION END
+-----------------------------------------------------
+            STYLING START
+-----------------------------------------------------
+#}
+{% assign __design__body_w_max = '600px' %}
+{% assign __design__col_w_large = '600px' %}
+{% assign __design__col_w_medium = '400px' %}
+{% assign __design__col_w_small = '200px' %}
+
+{% assign __design__col_w_rel_100 = '100%' %}
+{% assign __design__col_w_rel_75 = '75%' %}
+{% assign __design__col_w_rel_50 = '50%' %}
+{% assign __design__col_w_rel_25 = '25%' %}
+
+{% assign __design__pad_30 = '30px' %}
+{% assign __design__pad_25 = '25px' %}
+{% assign __design__pad_20 = '20px' %}
+{% assign __design__pad_15 = '15px' %}
+{% assign __design__pad_10 = '10px' %}
+{% assign __design__pad_5 = '5px' %}
+{% assign __design__pad_0 = '0px' %}
+
+{% assign __design__img_w_large = '400px' %}
+{% assign __design__img_w_medium = '300px' %}
+{% assign __design__img_w_small = '200px' %}
+{% assign __design__img_w_smallish = '170px' %}
+{% assign __design__img_w_thumb = '70px' %}
+{% assign __design__img_w_swatch = '40px' %}
+
+{% assign __design__font_size_60 = '60px' %}
+{% assign __design__font_size_40 = '40px' %}
+{% assign __design__font_size_36 = '36px' %}
+{% assign __design__font_size_30 = '30px' %}
+{% assign __design__font_size_27 = '27px' %}
+{% assign __design__font_size_25 = '25px' %}
+{% assign __design__font_size_24 = '24px' %}
+{% assign __design__font_size_22 = '22px' %}
+{% assign __design__font_size_19 = '19px' %}
+{% assign __design__font_size_18 = '18px' %}
+{% assign __design__font_size_17 = '17px' %}
+{% assign __design__font_size_16 = '16px' %}
+{% assign __design__font_size_15 = '15px' %}
+{% assign __design__font_size_14 = '14px' %}
+{% assign __design__font_size_13 = '13px' %}
+{% assign __design__font_size_12 = '12px' %}
+{% assign __design__font_size_10 = '10px' %}
+
+{% assign __design__font_weight_900 = '900' %}
+{% assign __design__font_weight_800 = '800' %}
+{% assign __design__font_weight_700 = '700' %}
+{% assign __design__font_weight_600 = '600' %}
+{% assign __design__font_weight_500 = '500' %}
+{% assign __design__font_weight_400 = '400' %}
+{% assign __design__font_weight_300 = '300' %}
+
+{% assign __design__opacity_6 = '0.6' %}
+{% assign __design__opacity_8 = '0.8' %}
+
+{% assign __design__font_fam_title = 'Helvetica' %}
+{% assign __design__font_fam_section = 'Arial' %}
+{% assign __design__font_fam_cta = 'Arial' %}
+
+{% assign __design__border_rd_0 = '0px' %}
+{% assign __design__border_rd_3 = '3px' %}
+{% assign __design__border_rd_10 = '10px' %}
+{% assign __design__border_rd_40 = '40px' %}
+
+{% assign __design__section_bg_color_white = '#ffffff' %}
+{% assign __design__body_bg_color = '#eceff4' %}
+{% assign __design__active_color = '#333333' %}
+{% assign __design__active_alt_color = '#fcfcfc' %}
+{% assign __design__text_color_white = '#ffffff' %}
+{% assign __design__text_alt_color_black = '#000000' %}
+{% assign __design__listprice_color = '#979797' %}
+{% assign __design__price_color = '#000000' %}
+
+
+{#
+-----------------------------------------------------
+                STYLING END
+-----------------------------------------------------
+            CUSTOM TEXTS START
+-----------------------------------------------------
+#}
+{% assign __design__cta_text = 'BUY NOW' %}
+{% assign __design__currency_symbol = '€' %}
+
+{#
+-----------------------------------------------------
+            CUSTOM TEXTS END
+-----------------------------------------------------
+            SHOP VARS START
+-----------------------------------------------------
+#}
+{% assign __design__shop_title = 'Clerk.io' %}
+
+{% assign __design__shop_domain = 'https://www.clerk.io' %}
+{% assign __design__shop_privacy_policy = 'https://help.clerk.io/help/gdpr/gdpr/' %}
+{% assign __design__shop_rel_url_home = '/home' %}
+{% assign __design__shop_rel_url_blog = '/blog' %}
+{% assign __design__shop_rel_url_store = '/store' %}
+
+{% assign __design__api_key = '' %}
+{% assign __design__social_facebook_url = '' %}
+{% assign __design__social_youtube_url = '' %}
+{% assign __design__social_instagram_url = '' %}
+{% assign __design__social_twitter_url = '' %}
+{% assign __design__social_google_url = '' %}
+{% assign __design__social_pinterest_url = '' %}
+{% assign __design__social_tumblr_url = '' %}
+{% assign __design__social_linkedin_url = '' %}
+{% if input_shop_logo_image_url == null %}{% assign input_shop_logo_image_url = 'https://global-uploads.webflow.com/63357df7224a8a49353f3636/63381c44a918c228b61fd12e_Logo.svg' %}{% endif %}
+{% if input_banner_image == null %}{% assign input_banner_image = 'https://assets-global.website-files.com/63357df7224a8a49353f3636/635560bbe41031b0fd7bcd10_lifecycle.svg' %}{% endif %}
+{% if input_headline == null %}{% assign input_headline = 'Example Headline' %}{% endif %}
+{% if input_text_long == null %}{% assign input_text_long = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium magna et urna fringilla convallis. Nullam non urna scelerisque, posuere diam ut, pretium ante. Donec elementum risus et nibh pellentesque accumsan. ' %}{% endif %}
+{% if input_bottom_banner_image == null %}{% assign input_bottom_banner_image = 'https://assets-global.website-files.com/63357df7224a8a49353f3636/635560bbe41031b0fd7bcd10_lifecycle.svg' %}{% endif %}
+
+{#
+-----------------------------------------------------
+            SHOP VARS END
+-----------------------------------------------------
+#}
+<mjml>
+<mj-body
+  background-color="{{ __design__body_bg_color }}"
+  color="{{ __design__body_bg_color }}"
+  font-family="{{ __design__font_fam_title }}">
+  {% if input_shop_logo_image_url != 0 %}
+  <mj-section
+    background-color="{{ __design__section_bg_color_white }}"
+    background-repeat="no-repeat"
+    text-align="center"
+    vertical-align="top">
+    <mj-column>
+      <mj-image
+        align="center"
+        border="none"
+        padding-bottom="{{ __design__pad_0 }}"
+        padding="{{ __design__pad_10 }} {{ __design__pad_25 }}"
+        href="{{ __design__shop_domain }}"
+        src="{{ input_shop_logo_image_url }}"
+        target="_blank"
+        title="{{ __design__shop_title }}"
+        ></mj-image>
+    </mj-column>
+  </mj-section>
+  {% endif %}
+  <mj-section background-color="{{ __design__active_color }}" padding="{{ __design__pad_0 }}">
+    <mj-group>
+      <mj-column>
+        <mj-navbar
+          base-url="{{ __design__shop_domain }}"
+          hamburger="hamburger"
+          ico-color="{{ __design__active_color }}">
+          <mj-navbar-link href="{{ __design__shop_rel_url_home }}" color="{{ __design__text_color_white }}" font-family="{{ __design__font_fam_section }}" font-size="16px">home</mj-navbar-link>
+          <mj-navbar-link href="{{ __design__shop_rel_url_blog }}" color="{{ __design__text_color_white }}" font-family="{{ __design__font_fam_section }}" font-size="16px">blog</mj-navbar-link>
+          <mj-navbar-link href="{{ __design__shop_rel_url_store }}" color="{{ __design__text_color_white }}" font-family="{{ __design__font_fam_section }}" font-size="16px">store</mj-navbar-link>
+        </mj-navbar>
+      </mj-column>
+    </mj-group>
+  </mj-section>
+
+  {% if input_banner_image != 0 %}
+  <mj-section
+      background-color="{{ __design__section_bg_color_white }}"
+      padding="{{ __design__pad_0 }}">
+      <mj-column>
+        <mj-image align="center" src="{{ input_banner_image }}" href="{{ __design__shop_domain }}"> </mj-image>
+      </mj-column>
+  </mj-section>
+  {% endif %}
+
+  {% if input_headline or input_text_long %}
+  <mj-section
+    background-color="{{ __design__section_bg_color_white }}"
+    background-repeat="no-repeat"
+    text-align="center"
+    vertical-align="top"
+    padding="{{ __design__pad_0 }} {{ __design__pad_0 }} {{ __design__pad_0 }} {{ __design__pad_0 }}">
+    <mj-column>
+    {% if input_headline != 0 %}
+      <mj-text
+        align="left"
+        color="{{ __design__body_color_hx }}"
+        font-family="{{ __design__font_fam_title }}"
+        font-size="{{ __design__font_size_14 }}"
+        line-height="{{ __design__font_size_22 }}"
+        padding-bottom="{{ __design__pad_5 }}"
+        padding-top="{{ __design__pad_25 }}"
+        padding="{{ __design__pad_10 }} {{ __design__pad_25 }}">
+        <p style="line-height: {{ __design__font_size_40 }}; text-align: center; margin: {{ __design__pad_10 }} {{ __design__pad_0 }};font-size:{{ __design__font_size_40 }};color:{{ __design__text_alt_color_black }};font-family:{{ __design__font_fam_section }}">
+          {{ input_headline }}
+        </p>
+      </mj-text>
+      {% endif %}
+      {% if input_text_long != 0 %}
+      <mj-text
+        align="left"
+        color="{{ __design__body_color_hx }}"
+        font-family="{{ __design__regular_font_family }}"
+        font-size="{{ __design__regular_font_size }}"
+        line-height="{{ __design__font_size_22 }}"
+        padding-bottom="{{ __design__pad_0 }}"
+        padding-top="{{ __design__pad_0 }}"
+        padding="{{ __design__pad_10 }} {{ __design__pad_25 }}">
+        <p style="line-height: {{ __design__font_size_30 }}; text-align: center; margin: {{ __design__pad_10 }} {{ __design__pad_0 }};color:{{ __design__text_alt_color_black }};font-size:{{ __design__font_size_24 }};font-family:{{ __design__font_fam_section }}">
+          <span style="color:{{ __design__text_alt_color_black }};font-size:{{ __design__font_size_18 }};font-family:{{ __design__font_fam_cta }}">{{ input_text_long }}</span>
+        </p>
+      </mj-text>
+      {% endif %}
+    </mj-column>
+  </mj-section>
+  {% endif %}
+  {% for product in products %}
+    {% assign loop_index = loop.index0 | int %}
+    {% assign end_row_index = loop_index + __design__one %}
+    {% assign row_start = (loop_index % __design__items_per_row == 0) %}
+    {% assign row_end = (end_row_index % __design__items_per_row == 0) %}
+    {% assign loop_last = loop.last %}
+    {% if loop_index < 6 %}
+      {% if loop_index == 0 or row_start %}
+        <mj-section
+          background-color="{{ __design__section_bg_color_white }}"
+          padding-bottom="{{ __design__pad_20 }}"
+          font-family="{{ __design__font_fam_section }}">
+        {% endif %}
+        <mj-column vertical-align="bottom">
+          <mj-image
+            src="{{ product.image }}"
+            alt="{{ product.name }}"
+            href="{{ product.url }}"
+            align="center"
+            border="none"
+            width="{{ __design__img_w_small }}"
+            padding-left="{{ __design__pad_0 }}"
+            padding-right="{{ __design__pad_0 }}"
+            padding-bottom="{{ __design__pad_20 }}"
+            padding-top="{{ __design__pad_30 }}"></mj-image>
+          <mj-text
+            font-weight="bold"
+            align="center"
+            color="{{ __design__text_alt_color_black }}"
+            font-size="{{ __design__pad_15 }}"
+            padding-left="{{ __design__pad_25 }}"
+            padding-right="{{ __design__pad_25 }}"
+            padding-bottom="{{ __design__pad_10 }}"
+            padding-top="{{ __design__pad_0 }}"
+            font-family="{{ __design__font_fam_section }}">
+            <p>{{ product.name }}</p>
+            {%if product.price < product.list_price %}
+            <span style="font-size: {{ __design__font_size_14 }}; text-decoration:line-through; margin-right: 8px;  color: {{ __design__listprice_color }};font-weight: {{ __design__font_weight_400 }};opacity: {{ __design__opacity_6 }};">{{ __design__currency_symbol }}{{ product.list_price | money_eu }}</span>
+            {%endif%}
+            <span style="font-size: {{ __design__font_size_14 }}; color: {{ __design__price_color }};">{{ __design__currency_symbol }}{{ product.price | money_eu }}</span>
+          </mj-text>
+          <mj-button
+            background-color="{{ __design__active_color }}"
+            font-family="{{ __design__font_fam_section }}"
+            color="{{ __design__text_color_white }}"
+            font-size="{{ __design__font_size_14 }}"
+            align="center"
+            padding="{{ __design__pad_15 }} {{ __design__pad_30 }}"
+            border-radius="{{ __design__border_rd_3 }}"
+            href="{{ product.url }}"
+            padding-bottom="{{ __design__pad_10 }}"
+            padding-top="{{ __design__pad_0 }}">{{ __design__cta_text }}</mj-button>
+        </mj-column>
+        {% if row_end or loop_last %}
+        </mj-section>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  {% if input_bottom_banner_image != 0 %}
+  <mj-section
+      background-color="{{ __design__section_bg_color_white }}"
+      padding="{{ __design__pad_0 }}"
+      >
+      <mj-column>
+        <mj-image align="center" src="{{ input_bottom_banner_image }}" href="{{ __design__shop_domain }}"> </mj-image>
+      </mj-column>
+  </mj-section>
+  {% endif %}
+
+  <mj-section
+    background-color="{{ __design__section_bg_color_white }}"
+    padding-bottom="{{ __design__pad_0 }}"
+    font-family="{{ __design__font_fam_section }}"
+    padding-top="{{ __design__pad_0 }}">
+    <mj-column>
+      <mj-social padding-top="{{ __design__pad_20 }}">
+      {% if __design__social_facebook_url %}
+        <mj-social-element name="facebook" href="{{ __design__social_facebook_url }}"></mj-social-element>
+      {% endif %}
+      {% if __design__social_youtube_url %}
+        <mj-social-element name="youtube" href="{{ __design__social_youtube_url }}"></mj-social-element>
+      {% endif %}
+      {% if __design__social_instagram_url %}
+        <mj-social-element name="instagram" href="{{ __design__social_instagram_url }}"></mj-social-element>
+      {% endif %}
+      {% if __design__social_twitter_url %}
+        <mj-social-element name="twitter" href="{{ __design__social_twitter_url }}"></mj-social-element>
+      {% endif %}
+      {% if __design__social_google_url %}
+        <mj-social-element name="google" href="{{ __design__social_google_url }}"></mj-social-element>
+      {% endif %}
+      {% if __design__social_pinterest_url %}
+        <mj-social-element name="pinterest" href="{{ __design__social_pinterest_url }}"></mj-social-element>
+      {% endif %}
+      {% if __design__social_tumblr_url %}
+        <mj-social-element name="tumblr" href="{{ __design__social_tumblr_url }}"></mj-social-element>
+      {% endif %}
+      {% if __design__social_linkedin_url %}
+        <mj-social-element name="linkedin" href="{{ __design__social_linkedin_url }}"></mj-social-element>
+      {% endif %}
+      </mj-social>
+    </mj-column>
+  </mj-section>
+  <mj-section background-color="{{ __design__section_bg_color_white }}">
+    <mj-column>
+      <mj-text
+        align="center"
+        color="{{ __design__text_color_white }}"
+        font-size="{{ __design__font_size_14 }}"
+        padding-left="{{ __design__pad_25 }}"
+        padding-right="{{ __design__pad_25 }}">
+        <a href="{{ __design__shop_privacy_policy }}">Privacy policy</a>
+      </mj-text>
+    </mj-column>
+  </mj-section>
+  <mj-section
+    background-color="{{ __design__section_bg_color_white }}"
+    padding-bottom="{{ __design__pad_10 }}"
+    padding-top="{{ __design__pad_0 }}">
+    <mj-column>
+      <mj-text align="center" color="{{ __design__text_alt_color_black }}" line-height="12px" font-size="{{ __design__font_size_12 }}" font-family="{{ __design__font_fam_section }}"> You can <a href="https://api.clerk.io/v2/subscriber/unsubscribe?key={{ __design__api_key }}&email={{ email }}&redirect=true'"> unsubscribe from this list </a> </mj-text>
+    </mj-column>
+  </mj-section>
+</mj-body>
+</mjml>

@@ -1,0 +1,101 @@
+<div class="clerk_facets">
+	<div class="clerk_display_toggle" onclick="clerk_toggle_facets()">
+		Filters
+		<?xml version="1.0" encoding="UTF-8"?>
+		<svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="35" height="18">
+			<path d="M1,4.75H3.736a3.728,3.728,0,0,0,7.195,0H23a1,1,0,0,0,0-2H10.931a3.728,3.728,0,0,0-7.195,0H1a1,1,0,0,0,0,2ZM7.333,2a1.75,1.75,0,1,1-1.75,1.75A1.752,1.752,0,0,1,7.333,2Z" />
+			<path d="M23,11H20.264a3.727,3.727,0,0,0-7.194,0H1a1,1,0,0,0,0,2H13.07a3.727,3.727,0,0,0,7.194,0H23a1,1,0,0,0,0-2Zm-6.333,2.75A1.75,1.75,0,1,1,18.417,12,1.752,1.752,0,0,1,16.667,13.75Z" />
+			<path d="M23,19.25H10.931a3.728,3.728,0,0,0-7.195,0H1a1,1,0,0,0,0,2H3.736a3.728,3.728,0,0,0,7.195,0H23a1,1,0,0,0,0-2ZM7.333,22a1.75,1.75,0,1,1,1.75-1.75A1.753,1.753,0,0,1,7.333,22Z" />
+		</svg>
+	</div>
+	<div class="clerk_facets_container">
+    <div class="clerk_facets_wrapper">
+      <select class="clerk_sort_toggle" onchange="clerkSorting(this.options[ this.selectedIndex ].value, event);">
+          <option class="clerk_sort_default" value="" disabled selected>Sorter efter:</option>
+          <option value="null_null">Bedst sælgende</option>
+          <option value="asc_name">Navn (A - Z)</option>
+          <option value="desc_name">Navn (Z - A)</option>
+          <option value="asc_price">Pris (lav til høj)</option>
+          <option value="desc_price">Pris (høj til lav)</option>
+      </select>
+    </div>
+		{% for facet_group in facets %}
+		<div class="clerk_facets_wrapper">
+			<div class="clerk_facets_title">
+				<button type="button" class="clerk_facets_toggle" aria-expanded="false">
+					<span class="clerk_facets_toggle_headline">{{ facet_group.title }}</span>
+					<span class="clerk_facets_toggle_icons_wrapper">
+						<!-- Expand icon, show/hide based on section open state. -->
+						<svg class="clerk_facets_toggle_icons clerk_plus_icon" viewBox="0 0 20 20" fill="#000" aria-hidden="true">
+							<path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+						</svg>
+						<!-- Collapse icon, show/hide based on section open state. -->
+						<svg class="clerk_facets_toggle_icons clerk_minus_icon hidden" viewBox="0 0 20 20" fill="#000" aria-hidden="true">
+							<path fill-rule="evenodd" d="M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z" clip-rule="evenodd" />
+						</svg>
+					</span>
+				</button>
+			</div>
+			<div class="clerk_facet_option_wrapper hidden">
+				{% if facet_group.type == "range" %}
+				<div class="clerk_facet_option_range clerk-range" data-group="{{ facet_group.group}}" data-min="{{ facet_group.min }}" data-max="{{ facet_group.max }}" data-start="{{ facet_group.start }}" data-end="{{ facet_group.end }}" data-step="auto"></div>
+				{% endif %} {% for facet in facet_group.facets %}
+				<div class="clerk-facet clerk_facet_option {% if facet.selected %} clerk-facet-selected {% endif %}" data-facet="{{ facet_group.group }}" data-value="{{ facet.value }}" data-min="{{ facet.min }}" data-max="{{ facet.max }}">
+					<div class="clerk_facet_option_name">{{ facet.name }}</div>
+					<div class="clerk_facet_option_count">{{ facet.count }}</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+<script>
+	var clerk_toggle_btns = document.querySelectorAll('.clerk_facets_toggle')
+	var clerk_plus_icons = document.querySelectorAll('.clerk_plus_icon')
+	var clerk_minus_icons = document.querySelectorAll('.clerk_minus_icon')
+	var clerk_facet_option_wrappers = document.querySelectorAll('.clerk_facet_option_wrapper')
+
+	clerk_toggle_btns.forEach((btn, index) => {
+		btn.addEventListener('click', () => {
+			clerk_minus_icons[index].classList.toggle('hidden')
+			clerk_plus_icons[index].classList.toggle('hidden')
+			clerk_facet_option_wrappers[index].classList.toggle('hidden')
+		})
+	})
+
+	function clerk_toggle_facets() {
+		let clerk_facets_container = document.querySelector('.clerk_facets_container')
+
+		if (clerk_facets_container.style.display == 'block') {
+			clerk_facets_container.style.display = 'none'
+		} else {
+			clerk_facets_container.style.display = 'block'
+		}
+	}    
+	
+	
+	// Function to toggle sorting of results based on option in .clerk_sort_select.
+    // The function takes the value of the option and splits it by _.
+    // The value should always be either asc or desc followed by _ and the attribute key.
+    // The only exception to this is the default sorting which is defined as null_null.
+    function clerkSorting(val, event) {
+        or = val.split("_")[0] == "null" ? eval(val.split("_")[0]) : val.split("_")[0];
+        orb = val.split("_")[1] == "null" ? eval(val.split("_")[1]) : val.split("_")[1];
+        param_sort = val;
+        Clerk("content", "[data-target][data-query][data-template][data-clerk-content-id]", "param", {
+            orderby: orb,
+            order: or,
+        });
+    }
+    // Change value in select element to currently active choice, since element rerenders upon initial user input.
+    // Without it will show the first option nominally regardless of the current ordering in effect.
+    if (!param_sort) {
+        var param_sort;
+    } else {
+        if (param_sort.length > 0) {
+            document.querySelector(".clerk_sort_select").value = param_sort;
+        }
+    }
+</script>

@@ -1,0 +1,131 @@
+#clerk-facet-mobile-toggle,
+.clerk_display_toggle {
+	display: none;
+}
+.clerk-filter-wrap {
+	width: 30%;
+	box-sizing: border-box;
+}
+
+.clerk_facets_container {
+	padding: 0 1rem;
+}
+
+.clerk_facets_wrapper {
+	border-bottom: 1px solid #d1d5db;
+	padding: 1rem 0;
+}
+
+.clerk_facets_toggle {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.75rem 0;
+	border: none;
+	align-items: center;
+	cursor: pointer;
+	width: 100%;
+	background-color: transparent;
+}
+
+.clerk_facets_toggle:hover {
+	color: #6b7280;
+}
+
+.clerk_facets_toggle_headline {
+	color: #111827;
+	line-height: 1.25rem;
+	font-size: 0.875rem;
+}
+
+.clerk_facets_toggle_icons_wrapper {
+	display: flex;
+	align-items: center;
+	margin-left: 1.5rem;
+}
+
+.clerk_facets_toggle_icons {
+	height: 1.5rem;
+	width: 1.5rem;
+}
+
+.hidden {
+	display: none;
+}
+
+.clerk_facet_option,
+.clerk_facet_label {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	align-items: center;
+	margin: 0;
+	column-gap: 3px;
+}
+
+.clerk_facet_option {
+	padding-top: 0.4rem;
+}
+
+.clerk-range-selected-range {
+	background-color: #111827 !important;
+}
+
+.clerk_facet_option_name {
+	overflow: hidden;
+	font-size: 0.875rem;
+	text-overflow: ellipsis;
+	width: 89%;
+	color: #111827;
+	text-align: start;
+	padding-left: 8px;
+}
+
+.clerk_facet_option_name:before {
+	position: relative;
+	top: 0.1em;
+	display: inline-block;
+	content: '';
+	width: 15px;
+	height: 15px;
+	margin: 0 0.5em 0 0;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 0px;
+	transition: all 0.1s ease-in-out;
+	line-height: 15px;
+	text-align: center;
+}
+
+.clerk-facet-selected .clerk_facet_option_name:before {
+	border-color: #000;
+	content: '✔';
+	vertical-align: middle;
+}
+
+.clerk_facet_option_count {
+	margin-left: auto;
+	margin-right: 0.6rem;
+	color: #6b7280;
+	font-size: 0.9rem;
+	line-height: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+	.clerk-filter-wrap {
+		width: 100%;
+	}
+
+	.clerk_display_toggle_wrapper {
+		margin: 1rem;
+	}
+
+	.clerk_facets_container {
+		display: none;
+	}
+
+	.clerk_display_toggle {
+		display: flex;
+		margin: 1rem;
+		align-items: center;
+		cursor: pointer;
+	}
+}
