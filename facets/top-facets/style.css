@@ -25,11 +25,6 @@
 	border-radius: 0;
 }
 
-.clerk_sort_select:focus {
-	border: none;
-	border-top: 1px solid #eee;
-}
-
 .clerk-range-label-left,
 .clerk-range-label-right {
 	background-color: unset !important;
