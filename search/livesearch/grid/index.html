@@ -3,9 +3,7 @@
         {% if (products.length + categories.length + pages.length) == 0 %}
         <!-- NO RESULTS FALLBACK -->
         <div class="clerk-instant-search-no-results">
-            Nothing matched:
-            <b>{{ query }}</b>
-            ... try a simpler search!
+          No results for: <b>{{ query }}</b>
         </div>
         {% endif %} 
         {% if products.length > 0 %}
