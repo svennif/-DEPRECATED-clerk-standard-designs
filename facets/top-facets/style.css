@@ -110,7 +110,7 @@
 	display: none;
 	position: absolute;
 	background: #fff;
-	width: calc(100% - 10px);
+	width: auto;
 	margin: 0 0px;
 	padding: 5px;
 	border-top: none;
