@@ -30,7 +30,7 @@
         </span>
       </button>
     </div>
-    <div class="clerk_facet_option_wrapper hidden">
+    <div class="clerk_facet_option_wrapper clerk-hidden">
       {% if facet_group.type == "range" %}
       <div class="clerk_facet_option_range clerk-range" data-group="{{ facet_group.group}}" data-min="{{ facet_group.min }}" data-max="{{ facet_group.max }}" data-start="{{ facet_group.start }}" data-end="{{ facet_group.end }}" data-step="auto"></div>
       {% endif %} {% for facet in facet_group.facets %}
@@ -53,9 +53,9 @@ var clerk_facet_option_wrappers = document.querySelectorAll('.clerk_facet_option
 
 clerk_toggle_btns.forEach((btn, index) => {
   btn.addEventListener('click', () => {
-    clerk_minus_icons[index].classList.toggle('hidden')
-    clerk_plus_icons[index].classList.toggle('hidden')
-    clerk_facet_option_wrappers[index].classList.toggle('hidden')
+    clerk_minus_icons[index].classList.toggle('clerk-hidden')
+    clerk_plus_icons[index].classList.toggle('clerk-hidden')
+    clerk_facet_option_wrappers[index].classList.toggle('clerk-hidden')
   })
 })
 
