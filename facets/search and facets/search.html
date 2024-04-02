@@ -1,6 +1,6 @@
 <div class="clerk-search-result-wrapper">
 	<div class="clerk_display_toggle" onclick="clerk_show_hide()">
-		Filter 
+		Filter
 		<?xml version="1.0" encoding="UTF-8"?>
 		<svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="35" height="18">
 			<path d="M1,4.75H3.736a3.728,3.728,0,0,0,7.195,0H23a1,1,0,0,0,0-2H10.931a3.728,3.728,0,0,0-7.195,0H1a1,1,0,0,0,0,2ZM7.333,2a1.75,1.75,0,1,1-1.75,1.75A1.752,1.752,0,0,1,7.333,2Z" />
@@ -8,16 +8,16 @@
 			<path d="M23,19.25H10.931a3.728,3.728,0,0,0-7.195,0H1a1,1,0,0,0,0,2H3.736a3.728,3.728,0,0,0,7.195,0H23a1,1,0,0,0,0-2ZM7.333,22a1.75,1.75,0,1,1,1.75-1.75A1.753,1.753,0,0,1,7.333,22Z" />
 		</svg>
 	</div>
-    <div class="clerk_header_wrapper">
-    	{% if query.length > 0 %}
-    	<h1 class="clerk-search-result-title">{{ hits }} resultater for "{{query}}"</h1>
-    	{% endif %}
+	<div class="clerk_header_wrapper">
+		{% if query.length > 0 %}
+		<h1 class="clerk-search-result-title">{{ hits }} resultater for "{{query}}"</h1>
+		{% endif %}
 	</div>
 	<div class="clerk-grid-wrapper">
 		{% for item in products %} {% assign currency_symbol = "kr" %}
 		<div class="clerk-content">
-			
-		</div>
+      <!-- CONTENT GOES HERE -->
+    </div>
 		{% endfor %}
 	</div>
 	{% if count > products.length %}
@@ -27,9 +27,9 @@
 	{% endif %}
 </div>
 <script>
-function clerk_show_hide() {
-	var clerk_facets_container = document.querySelector('#clerk-search-filters')
+	function clerk_show_hide() {
+		var clerk_facets_container = document.querySelector('#clerk-search-filters')
 
     clerk_facets_container.classList.toggle('clerk_active')
-}
+	}
 </script>
