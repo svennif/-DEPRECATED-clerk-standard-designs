@@ -1,0 +1,70 @@
+<script type="text/javascript">
+(function (w, d) {
+  var e = d.createElement("script");
+  e.type = "text/javascript";
+  e.async = true;
+  e.src =
+    (d.location.protocol == "https:" ? "https" : "http") +
+    "://cdn.clerk.io/clerk.js";
+  var s = d.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(e, s);
+  w.__clerk_q = w.__clerk_q || [];
+  w.Clerk =
+    w.Clerk ||
+    function () {
+      w.__clerk_q.push(arguments);
+    };
+})(window, document);
+
+document.addEventListener("DOMContentLoaded", (e) => {
+  let shopifyCountry = Shopify.country;
+  let publicKey;
+  let clerkLanguage = "english";
+  switch (shopifyCountry) {
+    case "DK":
+      publicKey = "KEY";
+      clerkLanguage = "danish";
+      break;
+    case "DE":
+      publicKey = "KEY";
+      clerkLanguage = "german";
+      break;
+    case "ES":
+      publicKey = "KEY";
+      clerkLanguage = "spanish";
+      break;
+    case "FR":
+      publicKey = "KEY";
+      clerkLanguage = "french";
+      break;
+    case "IT":
+      publicKey = "KEY";
+      clerkLanguage = "italian";
+      break;
+    case "NL":
+      publicKey = "KEY";
+      clerkLanguage = "dutch";
+      break;
+    case "SE":
+      publicKey = "KEY";
+      clerkLanguage = "swedish";
+      break;
+
+    default:
+      // Default English
+      publicKey = "KEY";
+      clerkLanguage = "english";
+      break;
+  }
+
+  Clerk("config", {
+    key: publicKey,
+    language: clerkLanguage
+  });
+
+  window.Shopify.analytics.publish("clerk_pixel_context", {
+    localeApiKey: Clerk?._config.key,
+  });
+});
+
+</script>
