@@ -9,11 +9,6 @@
 	display: none;
 }
 
-.clerk-see-more-button-wrapper button {
-	background-color: #f36315;
-	color: #fff;
-}
-
 .clerk-grid-wrapper {
 	width: 100%;
 	display: grid;

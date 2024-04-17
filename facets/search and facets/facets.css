@@ -2,9 +2,18 @@
 .clerk_hide_display {
 	display: none;
 }
+
+#clerk-facets-container {
+	max-width: 300px;
+	width: 100%;
+}
+
+.clerk_flex_wrap {
+	display: flex;
+}
+
 .clerk-filter-wrap,
 #clerk-search-filters {
-	width: 30%;
 	box-sizing: border-box;
 }
 
@@ -119,6 +128,10 @@
 @media screen and (max-width: 768px) {
 	.clerk-filter-wrap {
 		width: 100%;
+	}
+
+	.clerk_flex_wrap {
+		flex-direction: column;
 	}
 
 	.clerk_hide_display {
